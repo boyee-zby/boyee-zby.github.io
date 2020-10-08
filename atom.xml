@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Boyee&#39;s Space</title>
+  <icon>http://example.com/icon.png</icon>
+  <subtitle>Treasureboyee</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2020-10-08T01:09:27.340Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Boyee Zhang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World--纪念我的第一篇Blog</title>
+    <link href="http://example.com/2020/10/06/hello-world/"/>
+    <id>http://example.com/2020/10/06/hello-world/</id>
+    <published>2020-10-06T12:40:50.883Z</published>
+    <updated>2020-10-08T01:09:27.340Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="新技能及新视野" scheme="http://example.com/categories/%E6%96%B0%E6%8A%80%E8%83%BD%E5%8F%8A%E6%96%B0%E8%A7%86%E9%87%8E/"/>
+    
+    
+    <category term="Life,Diary" scheme="http://example.com/tags/Life-Diary/"/>
+    
+  </entry>
+  
+</feed>

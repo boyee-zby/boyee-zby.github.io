@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://boyee-zby.github.io/sitemap.xml

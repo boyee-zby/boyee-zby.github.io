@@ -16,10 +16,23 @@
   <meta name="description" content="Personal academic website of Boyi Zhang, PhD student in Physical Education &amp; Sport Science at Shanghai Jiao Tong University, specialising in exercise physiology, training monitoring, and fitness assessment.">
   <meta name="author" content="Boyi Zhang">
   <meta name="keywords" content="Boyi Zhang, Boyi Zhang DSHS, Sports Science, Exercise Physiology, Training Monitoring, Physical Activity, Deutsche Sporthochschule Köln, Shanghai Jiao Tong University">
-  <title>Links - Boyi Zhang</title>
+  <title>Research - Boyi Zhang</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -166,59 +179,21 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="row links">
-  
-    
-    <div class="card col-lg-4 col-md-6 col-sm-12">
-      <a href="https://hexo.fluid-dev.com/docs/" class="card-body hover-with-bg" target="_blank" rel="noopener">
-        <div class="card-content">
-          
-            <div class="link-avatar my-auto">
-              <img src="/img/favicon.png" srcset="/img/loading.gif" alt="Fluid Docs" />
-            </div>
-          
-          <div class="link-text">
-            <div class="link-title">Fluid Docs</div>
-            <div class="link-intro">主题使用指南</div>
-          </div>
-        </div>
-      </a>
-    </div>
-  
-    
-    <div class="card col-lg-4 col-md-6 col-sm-12">
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" class="card-body hover-with-bg" target="_blank" rel="noopener">
-        <div class="card-content">
-          
-            <div class="link-avatar my-auto">
-              <img src="/img/favicon.png" srcset="/img/loading.gif" alt="Fluid Repo" />
-            </div>
-          
-          <div class="link-text">
-            <div class="link-title">Fluid Repo</div>
-            <div class="link-intro">主题 GitHub 仓库</div>
-          </div>
-        </div>
-      </a>
-    </div>
-  
-    
-    <div class="card col-lg-4 col-md-6 col-sm-12">
-      <a href="https://hexo.fluid-dev.com/docs/example/" class="card-body hover-with-bg" target="_blank" rel="noopener">
-        <div class="card-content">
-          
-            <div class="link-avatar my-auto">
-              <img src="/img/favicon.png" srcset="/img/loading.gif" alt="Fluid Example" />
-            </div>
-          
-          <div class="link-text">
-            <div class="link-title">Fluid Example</div>
-            <div class="link-intro">主题操作示例</div>
-          </div>
-        </div>
-      </a>
-    </div>
-  
+<div class="page-content">
+  <h2 id="Research-Interests"><a href="#Research-Interests" class="headerlink" title="Research Interests"></a>Research Interests</h2><p>My work sits at the intersection of exercise physiology and applied sports performance science. I am interested in understanding how the body responds to training stress and how we can better monitor and optimise athlete readiness.</p>
+<ul>
+<li><strong>Exercise Physiology</strong> — Physiological responses and long-term adaptations to exercise training</li>
+<li><strong>Training Monitoring &amp; Evaluation</strong> — Load quantification, fatigue tracking, readiness assessment</li>
+<li><strong>Physical Fitness Assessment</strong> — Functional movement screening, strength &amp; conditioning testing</li>
+<li><strong>Energy Metabolism</strong> — Energy expenditure and metabolic responses during sport and exercise</li>
+</ul>
+<hr>
+<h2 id="Current-Projects"><a href="#Current-Projects" class="headerlink" title="Current Projects"></a>Current Projects</h2><h3 id="Warm-up-Protocols-and-Athletic-Performance"><a href="#Warm-up-Protocols-and-Athletic-Performance" class="headerlink" title="Warm-up Protocols and Athletic Performance"></a>Warm-up Protocols and Athletic Performance</h3><p><em>Status: In progress</em></p>
+<p>Investigating the dose-response relationship between warm-up structure, duration, and subsequent performance indicators in trained athletes.</p>
+<hr>
+<h2 id="Supervision"><a href="#Supervision" class="headerlink" title="Supervision"></a>Supervision</h2><p><strong>Graduate:</strong> Prof. Sulin Cheng, Department of Physical Education, Shanghai Jiao Tong University</p>
+<p><strong>Undergraduate:</strong> Prof. Yongming Li, School of Physical Education and Sport Training, Shanghai University of Sport</p>
+
 </div>
 
               </div>
@@ -482,7 +457,7 @@
       if ('false' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/links/index.html');
+          var target = decodeURI('/research/index.html');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -551,7 +526,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Links&nbsp;",
+        "Research&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -565,6 +540,21 @@
   </script>
 
 
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
 
 
 

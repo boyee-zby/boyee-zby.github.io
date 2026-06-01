@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Ocean background -->
+  <circle cx="50" cy="50" r="50" fill="#1a6b5a"/>
+
+  <!-- Latitude grid lines -->
+  <ellipse cx="50" cy="50" rx="50" ry="16" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+  <ellipse cx="50" cy="50" rx="50" ry="32" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+  <line x1="0" y1="50" x2="100" y2="50" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+
+  <!-- Longitude grid lines -->
+  <line x1="50" y1="0" x2="50" y2="100" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+  <ellipse cx="50" cy="50" rx="20" ry="50" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+  <ellipse cx="50" cy="50" rx="40" ry="50" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+
+  <!-- Stylised land masses (simplified continents) -->
+  <!-- Americas -->
+  <path d="M28,22 Q24,28 23,36 Q20,44 22,52 Q24,60 26,66 Q30,72 28,78 Q32,74 34,68 Q36,60 34,52 Q36,44 38,36 Q36,28 32,22 Z"
+        fill="rgba(255,255,255,0.82)"/>
+  <!-- Europe + Africa -->
+  <path d="M46,20 Q44,26 45,32 Q44,38 46,44 Q45,50 46,56 Q48,66 50,74 Q52,66 53,56 Q54,50 53,44 Q55,38 54,32 Q55,26 53,20 Z"
+        fill="rgba(255,255,255,0.82)"/>
+  <!-- Asia -->
+  <path d="M58,18 Q54,22 56,28 Q60,32 66,30 Q72,28 74,24 Q76,30 74,36 Q70,40 68,46 Q72,50 74,56 Q70,58 66,54 Q62,52 60,46 Q58,42 60,36 Q56,32 58,26 Z"
+        fill="rgba(255,255,255,0.82)"/>
+  <!-- Australia -->
+  <path d="M68,60 Q64,62 63,68 Q65,74 70,76 Q76,74 78,68 Q76,62 72,60 Z"
+        fill="rgba(255,255,255,0.82)"/>
+
+  <!-- Outer border -->
+  <circle cx="50" cy="50" r="49" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+</svg>

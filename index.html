@@ -12,13 +12,13 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green:  #1a6b5a;
+      --green:       #1a6b5a;
       --green-light: #e6f4f0;
-      --text:   #2c3e50;
-      --muted:  #718096;
-      --border: #e2e8f0;
-      --white:  #ffffff;
-      --bg:     #f8fafb;
+      --text:        #2c3e50;
+      --muted:       #718096;
+      --border:      #e2e8f0;
+      --white:       #ffffff;
+      --bg:          #f8fafb;
     }
 
     html { scroll-behavior: smooth; }
@@ -34,290 +34,189 @@
 
     /* ── Navigation ── */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 999;
+      position: sticky; top: 0; z-index: 999;
       background: var(--green);
       box-shadow: 0 2px 8px rgba(0,0,0,.18);
     }
-
     nav ul {
-      max-width: 900px;
-      margin: 0 auto;
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0 16px;
+      max-width: 920px; margin: 0 auto;
+      list-style: none; display: flex; flex-wrap: wrap; padding: 0 16px;
     }
-
     nav a {
-      display: block;
-      color: rgba(255,255,255,.92);
-      text-decoration: none;
-      padding: 13px 15px;
-      font-size: 13.5px;
-      font-weight: 500;
-      letter-spacing: .3px;
-      transition: background .15s;
+      display: block; color: rgba(255,255,255,.92); text-decoration: none;
+      padding: 13px 15px; font-size: 13.5px; font-weight: 500;
+      letter-spacing: .3px; transition: background .15s;
     }
-
     nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
 
     /* ── Layout ── */
-    .wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
 
-    section {
-      padding: 52px 0 44px;
-      border-bottom: 1px solid var(--border);
-    }
-
+    section { padding: 50px 0 42px; border-bottom: 1px solid var(--border); }
     section:last-of-type { border-bottom: none; }
 
     h2 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--green);
-      margin-bottom: 22px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-size: 1.22rem; font-weight: 700; color: var(--green);
+      margin-bottom: 22px; display: flex; align-items: center; gap: 8px;
     }
-
     h2::after {
-      content: '';
-      display: block;
-      flex: 1;
-      height: 2px;
-      background: var(--border);
-      margin-left: 12px;
+      content: ''; display: block; flex: 1; height: 2px;
+      background: var(--border); margin-left: 12px;
     }
 
     /* ── Profile ── */
     #about {
-      display: flex;
-      gap: 40px;
-      align-items: flex-start;
-      padding: 52px 0;
+      display: flex; gap: 40px; align-items: flex-start; padding: 52px 0;
     }
-
     .avatar {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
+      width: 148px; height: 148px; border-radius: 50%;
+      object-fit: cover; flex-shrink: 0;
       border: 3px solid var(--green);
       box-shadow: 0 4px 16px rgba(26,107,90,.2);
     }
-
-    .bio h1 {
-      font-size: 1.9rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 4px;
-    }
-
-    .bio .pos {
-      color: var(--muted);
-      font-size: .95rem;
-      margin-bottom: 2px;
-    }
-
-    .bio .inst {
-      color: var(--muted);
-      font-size: .9rem;
-      margin-bottom: 14px;
-    }
-
+    .bio h1 { font-size: 1.85rem; font-weight: 700; line-height: 1.2; margin-bottom: 4px; }
+    .bio .pos  { color: var(--muted); font-size: .94rem; margin-bottom: 2px; }
+    .bio .inst { color: var(--muted); font-size: .88rem; margin-bottom: 14px; }
     .bio p { max-width: 580px; color: #444; margin-bottom: 18px; }
 
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; }
     .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 5px 14px;
-      border-radius: 999px;
-      font-size: 12.5px;
-      font-weight: 600;
-      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 5px 14px; border-radius: 999px;
+      font-size: 12.5px; font-weight: 600; text-decoration: none;
       transition: opacity .15s, transform .15s;
     }
-
     .badge:hover { opacity: .85; transform: translateY(-1px); }
     .badge-scholar { background: #4285f4; color: #fff; }
     .badge-email   { background: #ea4335; color: #fff; }
-    .badge-github  { background: #24292e; color: #fff; }
     .badge-bili    { background: #00a1d6; color: #fff; }
 
     /* ── News ── */
     .news-row {
-      display: flex;
-      gap: 16px;
-      padding: 9px 0;
-      border-bottom: 1px dashed var(--border);
-      align-items: baseline;
+      display: flex; gap: 16px; padding: 9px 0;
+      border-bottom: 1px dashed var(--border); align-items: baseline;
     }
-
     .news-row:last-child { border-bottom: none; }
-
-    .news-date {
-      min-width: 82px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--green);
-      white-space: nowrap;
-    }
-
-    .news-text { color: var(--text); }
+    .news-date { min-width: 82px; font-size: 12.5px; font-weight: 700; color: var(--green); white-space: nowrap; }
 
     /* ── Education ── */
     .edu-item {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 22px;
-      padding-left: 4px;
       border-left: 3px solid var(--green);
-      padding-left: 16px;
+      padding-left: 16px; margin-bottom: 22px;
     }
-
     .edu-item:last-child { margin-bottom: 0; }
-
     .edu-title { font-weight: 700; margin-bottom: 2px; }
     .edu-inst  { color: #444; }
     .edu-when  { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
 
-    /* ── Research interests ── */
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin: 16px 0 24px;
-    }
-
+    /* ── Research ── */
+    .tags { display: flex; flex-wrap: wrap; gap: 9px; margin: 16px 0 24px; }
     .tag {
-      padding: 5px 15px;
-      border-radius: 999px;
-      background: var(--green-light);
-      color: var(--green);
-      font-size: 13px;
-      font-weight: 500;
-      border: 1px solid #b2d8cc;
+      padding: 5px 15px; border-radius: 999px;
+      background: var(--green-light); color: var(--green);
+      font-size: 13px; font-weight: 500; border: 1px solid #b2d8cc;
     }
-
     .project-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 18px 20px;
-      margin-top: 10px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 10px; padding: 18px 20px; margin-top: 10px;
     }
-
     .project-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
-    .project-card .status {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 4px;
-      background: #fff3cd;
-      color: #856404;
-      margin-bottom: 8px;
+    .status-badge {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      padding: 2px 8px; border-radius: 4px;
+      background: #fff3cd; color: #856404; margin-bottom: 8px;
     }
 
     /* ── Publications ── */
     .scholar-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 20px;
-      background: var(--green);
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      margin-bottom: 24px;
-      transition: opacity .15s;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 20px; background: var(--green); color: #fff;
+      border-radius: 8px; text-decoration: none; font-weight: 600;
+      font-size: 14px; margin-bottom: 28px; transition: opacity .15s;
     }
-
     .scholar-cta:hover { opacity: .85; }
 
-    .pub-item {
-      padding: 16px 18px;
+    /* Publication card — Wang Ran style */
+    .pub-card {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 16px 0; border-bottom: 1px solid var(--border);
+    }
+    .pub-card:last-child { border-bottom: none; }
+
+    .pub-img-wrap {
+      flex-shrink: 0; width: 200px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pub-img-wrap img {
+      width: 200px; max-height: 130px;
+      object-fit: cover; border-radius: 6px;
       border: 1px solid var(--border);
-      border-radius: 8px;
-      margin-bottom: 14px;
-      transition: box-shadow .15s;
+      background: #f5f5f5;
+    }
+    /* hide image column entirely if no image loaded */
+    .pub-img-wrap.empty { display: none; }
+
+    .pub-body { flex: 1; min-width: 0; }
+
+    .pub-authors { font-size: 14px; margin-bottom: 4px; }
+    .pub-authors .me { color: var(--green); font-weight: 700; }
+    .pub-authors .corr { color: #c0392b; font-weight: 700; }
+
+    .pub-title {
+      font-style: italic; font-size: 14px;
+      color: var(--text); margin-bottom: 4px;
     }
 
-    .pub-item:hover { box-shadow: 0 3px 14px rgba(0,0,0,.07); }
-    .pub-title { font-weight: 700; color: var(--text); margin-bottom: 4px; }
-    .pub-meta  { font-size: 13px; color: var(--muted); }
-    .pub-links { margin-top: 8px; display: flex; gap: 8px; }
-    .pub-link  {
-      font-size: 12px;
-      padding: 2px 10px;
-      border-radius: 4px;
-      background: var(--green-light);
-      color: var(--green);
-      text-decoration: none;
+    .pub-venue { font-size: 13.5px; color: #444; margin-bottom: 6px; }
+    .pub-venue em { font-style: italic; font-weight: 600; }
+
+    .pub-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 7px; }
+    .pub-tag {
+      font-size: 11px; padding: 2px 8px; border-radius: 4px;
       font-weight: 600;
-      border: 1px solid #b2d8cc;
     }
+    .tag-sci   { background: #d4edda; color: #155724; }
+    .tag-first { background: #cce5ff; color: #004085; }
+    .tag-corr  { background: #f8d7da; color: #721c24; }
+    .tag-year  { background: var(--green-light); color: var(--green); }
 
+    .pub-links { display: flex; gap: 8px; }
+    .pub-link {
+      font-size: 12px; padding: 3px 11px; border-radius: 4px;
+      background: var(--green-light); color: var(--green);
+      text-decoration: none; font-weight: 600; border: 1px solid #b2d8cc;
+      transition: all .15s;
+    }
     .pub-link:hover { background: var(--green); color: #fff; }
 
+    /* Loading spinner for auto-fetch */
+    #pub-fetch-status {
+      font-size: 13px; color: var(--muted);
+      padding: 6px 0; margin-bottom: 12px;
+    }
+
     /* ── Contact ── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-top: 8px;
-    }
-
-    .contact-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .contact-icon {
-      font-size: 1.4rem;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 8px; }
+    .contact-item { display: flex; gap: 12px; align-items: flex-start; }
+    .contact-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
     .contact-item a { color: var(--green); text-decoration: none; font-weight: 600; }
     .contact-item a:hover { text-decoration: underline; }
 
     /* ── Footer ── */
     footer {
-      text-align: center;
-      padding: 22px;
-      background: var(--bg);
-      color: var(--muted);
-      font-size: 12.5px;
+      text-align: center; padding: 22px;
+      background: var(--bg); color: var(--muted); font-size: 12.5px;
       border-top: 1px solid var(--border);
     }
-
     footer a { color: var(--green); text-decoration: none; }
 
     /* ── Responsive ── */
-    @media (max-width: 640px) {
+    @media (max-width: 680px) {
       #about { flex-direction: column; align-items: center; text-align: center; }
       .bio p { max-width: 100%; }
       .badges { justify-content: center; }
       .contact-grid { grid-template-columns: 1fr; }
+      .pub-img-wrap { display: none; }
       nav a { padding: 11px 10px; font-size: 12.5px; }
     }
   </style>
@@ -337,8 +236,9 @@
   </ul>
 </nav>
 
-<!-- ── About / Profile ── -->
 <div class="wrap">
+
+  <!-- ── About ── -->
   <section id="about">
     <img src="/img/profile.jpg" alt="Boyi Zhang" class="avatar">
     <div class="bio">
@@ -346,10 +246,10 @@
       <p class="pos">PhD Student in Sport Science</p>
       <p class="inst">Deutsche Sporthochschule Köln &nbsp;·&nbsp; Shanghai Jiao Tong University</p>
       <p>
-        I am a sport scientist interested in how the human body responds and adapts to
-        exercise training. My work focuses on <strong>exercise physiology</strong>,
-        <strong>training load monitoring</strong>, and <strong>physical fitness assessment</strong>,
-        with the goal of bridging laboratory insights and real-world athletic performance.
+        I am a sport scientist interested in how the human body responds and adapts to exercise training.
+        My work focuses on <strong>exercise physiology</strong>, <strong>training load monitoring</strong>,
+        and <strong>physical fitness assessment</strong>, with the goal of bridging laboratory insights
+        and real-world athletic performance.
       </p>
       <div class="badges">
         <a class="badge badge-scholar"
@@ -357,12 +257,8 @@
            target="_blank">🎓 Google Scholar</a>
         <a class="badge badge-email"
            href="mailto:boyi.zhang@stud.dshs-koeln.de">✉️ Email</a>
-        <a class="badge badge-github"
-           href="https://github.com/boyee-zby"
-           target="_blank">🐙 GitHub</a>
         <a class="badge badge-bili"
-           href="https://space.bilibili.com/214523135"
-           target="_blank">📺 Bilibili</a>
+           href="https://space.bilibili.com/214523135" target="_blank">📺 Bilibili</a>
       </div>
     </div>
   </section>
@@ -370,51 +266,32 @@
   <!-- ── News ── -->
   <section id="news">
     <h2>🔥 News</h2>
-
-    <div class="news-row">
-      <span class="news-date">Jun 2026</span>
-      <span class="news-text">Personal academic website relaunched with updated content.</span>
-    </div>
-    <div class="news-row">
-      <span class="news-date">2024</span>
-      <span class="news-text">Started PhD studies at Deutsche Sporthochschule Köln (DSHS Cologne), Germany.</span>
-    </div>
-    <div class="news-row">
-      <span class="news-date">2020–2024</span>
-      <span class="news-text">Pursued M.Ed. in Physical Education & Sport Science at Shanghai Jiao Tong University under the supervision of Prof. Sulin Cheng.</span>
-    </div>
-    <div class="news-row">
-      <span class="news-date">Jun 2020</span>
-      <span class="news-text">Graduated with B.Ed. in Athletic Training (Physical Fitness Track) from Shanghai University of Sport.</span>
-    </div>
+    <div class="news-row"><span class="news-date">Jun 2026</span><span>Academic website relaunched with full publication list.</span></div>
+    <div class="news-row"><span class="news-date">2026</span><span>Two new papers published: <em>BMC Sports Science</em> (combined exercise intervention) and <em>J Physiology</em> (adipose tissue responses).</span></div>
+    <div class="news-row"><span class="news-date">2025</span><span>New papers on Post-COVID in Master Athletes (<em>SJMSS</em>), menopausal symptoms and low energy availability at the World Masters Athletics Championships (<em>DJSM</em>), and plyometric training (<em>Frontiers in Physiology</em>).</span></div>
+    <div class="news-row"><span class="news-date">2024</span><span>Multiple papers on exercise snacks, sedentary behaviour, and SARS-CoV-2 return-to-sport published in <em>APNM</em>, <em>SJMSS</em>, and <em>Sports Medicine</em>.</span></div>
+    <div class="news-row"><span class="news-date">2024</span><span>Started PhD studies at Deutsche Sporthochschule Köln (DSHS Cologne), Germany.</span></div>
+    <div class="news-row"><span class="news-date">2022</span><span>Papers on COVID campus lockdown and athlete sleep quality published in <em>Frontiers in Psychology</em> and <em>Sports Medicine and Health Science</em>.</span></div>
+    <div class="news-row"><span class="news-date">Jun 2020</span><span>Graduated with B.Ed. in Athletic Training from Shanghai University of Sport.</span></div>
   </section>
 
   <!-- ── Education ── -->
   <section id="education">
     <h2>🎓 Education</h2>
-
     <div class="edu-item">
-      <div>
-        <div class="edu-title">PhD in Sport Science</div>
-        <div class="edu-inst">Deutsche Sporthochschule Köln (DSHS Cologne), Germany</div>
-        <div class="edu-when">2024 – present</div>
-      </div>
+      <div class="edu-title">PhD in Sport Science</div>
+      <div class="edu-inst">Deutsche Sporthochschule Köln (DSHS Cologne), Germany</div>
+      <div class="edu-when">2024 – present</div>
     </div>
-
     <div class="edu-item">
-      <div>
-        <div class="edu-title">M.Ed. in Physical Education & Sport Science</div>
-        <div class="edu-inst">Shanghai Jiao Tong University, China &nbsp;·&nbsp; Supervisor: Prof. Sulin Cheng</div>
-        <div class="edu-when">2020 – 2024</div>
-      </div>
+      <div class="edu-title">M.Ed. in Physical Education &amp; Sport Science</div>
+      <div class="edu-inst">Shanghai Jiao Tong University, China &nbsp;·&nbsp; Supervisor: Prof. Sulin Cheng</div>
+      <div class="edu-when">2020 – 2024</div>
     </div>
-
     <div class="edu-item">
-      <div>
-        <div class="edu-title">B.Ed. in Athletic Training (Physical Fitness Track)</div>
-        <div class="edu-inst">Shanghai University of Sport, China &nbsp;·&nbsp; Supervisor: Prof. Yongming Li</div>
-        <div class="edu-when">2016 – 2020</div>
-      </div>
+      <div class="edu-title">B.Ed. in Athletic Training (Physical Fitness Track)</div>
+      <div class="edu-inst">Shanghai University of Sport, China &nbsp;·&nbsp; Supervisor: Prof. Yongming Li</div>
+      <div class="edu-when">2016 – 2020</div>
     </div>
   </section>
 
@@ -422,20 +299,19 @@
   <section id="research">
     <h2>🔬 Research</h2>
     <p>My research sits at the intersection of exercise physiology and applied sports performance science. I am particularly interested in understanding how the body responds to training stress and how we can better monitor and optimise athlete readiness.</p>
-
     <div class="tags">
       <span class="tag">Exercise Physiology</span>
-      <span class="tag">Training Monitoring & Evaluation</span>
+      <span class="tag">Training Monitoring &amp; Evaluation</span>
       <span class="tag">Physical Fitness Assessment</span>
       <span class="tag">Energy Metabolism</span>
       <span class="tag">Warm-up Protocols</span>
-      <span class="tag">Functional Movement Screening</span>
+      <span class="tag">Master Athletes</span>
+      <span class="tag">Sedentary Behaviour</span>
     </div>
-
     <div class="project-card">
-      <h4>Warm-up Protocols and Athletic Performance</h4>
-      <span class="status">In Progress</span>
-      <p>Investigating the dose-response relationship between warm-up structure, duration, and subsequent performance indicators in trained athletes.</p>
+      <h4>Post-COVID Condition in Master Athletes</h4>
+      <span class="status-badge">Active</span>
+      <p>Investigating severity, symptoms, and associations with quality of life and inflammatory markers in master athletes following COVID-19 infection.</p>
     </div>
   </section>
 
@@ -445,25 +321,294 @@
 
     <a class="scholar-cta"
        href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ&hl=en"
-       target="_blank">
-      🎓 View full list on Google Scholar
-    </a>
+       target="_blank">🎓 Full list on Google Scholar (420+ citations · h-index: 7)</a>
 
-    <!-- Add papers here as they are published. Example format below: -->
-    <!--
-    <div class="pub-item">
-      <div class="pub-title">Paper Title Here</div>
-      <div class="pub-meta">Journal Name · Year · Vol(Issue): pages</div>
-      <div class="pub-links">
-        <a class="pub-link" href="https://doi.org/..." target="_blank">DOI</a>
-        <a class="pub-link" href="/papers/filename.pdf" target="_blank">PDF</a>
+    <p id="pub-fetch-status"></p>
+
+    <div id="pub-list">
+
+      <!-- ── 2026 ── -->
+      <div class="pub-card">
+        <div class="pub-img-wrap empty" id="img-1">
+          <img src="/img/papers/2026-bmc-exercise.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• <span class="me">Zhang B</span>, Yang Z, Yin M, Xie Y, Zuo H, Zhang T, Lei S, Wang C, Cheng S, et al.</div>
+          <div class="pub-title">Effectiveness of combined exercise intervention on sedentary behaviour patterns, body composition, and cardiometabolic health among middle-aged adults</div>
+          <div class="pub-venue"><em>BMC Sports Science, Medicine and Rehabilitation</em>, 2026, 18(1): 45</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2026</span><span class="pub-tag tag-first">First Author</span><span class="pub-tag tag-sci">SCI</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://doi.org/10.1186/s13102-026-00045-z" target="_blank">[Web]</a></div>
+        </div>
       </div>
-    </div>
-    -->
 
-    <p style="color:#718096; font-style:italic;">
-      Publications will be listed here as they are accepted.
-      Please check Google Scholar for the most current list.
+      <div class="pub-card">
+        <div class="pub-img-wrap empty" id="img-2">
+          <img src="/img/papers/2026-jphysiol-adipose.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• Yin M, <span class="me">Zhang B</span>, Xu K, Wei J.</div>
+          <div class="pub-title">Does intensity matter? Insight from divergent adipose tissue molecular responses following exercise</div>
+          <div class="pub-venue"><em>The Journal of Physiology</em>, 2026, 604(3): 1021–1024</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2026</span><span class="pub-tag tag-sci">SCI</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://doi.org/10.1113/JP288000" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <!-- ── 2025 ── -->
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2025-sjmss-postcovid.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• <span class="me">Zhang B</span>, Grau M, Puta C, Arvidsson D, Arz M, Böcker J, Chilibeck P, et al.</div>
+          <div class="pub-title">Post-COVID-19 condition in track and field master athletes: severity, symptoms, and associations with quality of life and C-reactive protein levels</div>
+          <div class="pub-venue"><em>Scandinavian Journal of Medicine &amp; Science in Sports</em>, 2025, 35(7): e70106</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2025</span><span class="pub-tag tag-first">First Author</span><span class="pub-tag tag-sci">SCI</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://doi.org/10.1111/sms.70106" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2025-djsm-menopause.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• <span class="me">Zhang B</span>, Pesta D, Forbes S, Chilibeck P, McLaurin N, Tanaka H, Böcker J, et al.</div>
+          <div class="pub-title">Menopausal symptoms in track and field master athletes: insights from the 2024 World Masters Athletics Championship</div>
+          <div class="pub-venue"><em>German Journal of Sports Medicine (DJSM)</em>, 2025, 76(3)</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2025</span><span class="pub-tag tag-first">First Author</span><span class="pub-tag tag-sci">SCI</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2025-djsm-lea.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• <span class="me">Zhang B</span>, Forbes S, Pesta D, Chilibeck P, Ventovuori V, McLaurin N, et al.</div>
+          <div class="pub-title">Prevalence of low energy availability and fracture history in athletes at the World Masters Athletics Championships</div>
+          <div class="pub-venue"><em>German Journal of Sports Medicine (DJSM)</em>, 2025, 76(3)</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2025</span><span class="pub-tag tag-first">First Author</span><span class="pub-tag tag-sci">SCI</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2025-frontphysiol-plyometric.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• Wu B, <span class="me">Zhang B</span>, Yin M, Xu K, Ramirez-Campillo R, Huang S, Zhou L, et al.</div>
+          <div class="pub-title">Plyometric jump training micro- and high-dose effects on amateur basketball players athletic performance: a randomized controlled trial</div>
+          <div class="pub-venue"><em>Frontiers in Physiology</em>, 2025, 16: 1684022</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2025</span><span class="pub-tag tag-sci">SCI · Open Access</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://doi.org/10.3389/fphys.2025.1684022" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2025-sjmss-rebuttal.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• Yin M, Xu K, Chen S, <span class="me">Zhang B</span>, Tao M, Deng J, Deng S, Chen Z, Zhong Y, et al.</div>
+          <div class="pub-title">Rebuttal to Herold et al. regarding using "density," frequency, and "inter-bout interval" in exercise science</div>
+          <div class="pub-venue"><em>Scandinavian Journal of Medicine &amp; Science in Sports</em>, 2025, 35(6): e70078</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2025</span><span class="pub-tag tag-sci">SCI</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://doi.org/10.1111/sms.70078" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2025-ijssc-weight.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• Zhong Y, Langan-Evans C, Weldon A, Roberts CJ, Gee TI, Lakicevic N, <span class="me">Zhang B</span>, et al.</div>
+          <div class="pub-title">Weight loss practices, perceptions, and eating disorders among Chinese female adolescent combat sports athletes</div>
+          <div class="pub-venue"><em>International Journal of Sports Science &amp; Coaching</em>, 2025</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2025</span><span class="pub-tag tag-sci">SCI</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <!-- ── 2024 ── -->
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2024-apnm-exercisesnacks.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• Yin M, Deng S, Chen Z, <span class="me">Zhang B</span>, Zheng H, Bai M, Li H, Zhang X, Deng J, et al.</div>
+          <div class="pub-title">Exercise snacks are a time-efficient alternative to moderate-intensity continuous training for improving cardiorespiratory fitness but not maximal fat oxidation in inactive adults</div>
+          <div class="pub-venue"><em>Applied Physiology, Nutrition, and Metabolism</em>, 2024, 49(7): 920–932</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2024</span><span class="pub-tag tag-sci">SCI · 42 citations</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://doi.org/10.1139/apnm-2023-0576" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2024-sjmss-sitting.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• Yin M, Xu K, Deng J, Deng S, Chen Z, <span class="me">Zhang B</span>, Zhong Y, Li H, Zhang X, et al.</div>
+          <div class="pub-title">Optimal frequency of interrupting prolonged sitting for cardiometabolic health: a systematic review and meta-analysis of randomized crossover trials</div>
+          <div class="pub-venue"><em>Scandinavian Journal of Medicine &amp; Science in Sports</em>, 2024, 34(12): e14769</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2024</span><span class="pub-tag tag-sci">SCI · 28 citations</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://doi.org/10.1111/sms.14769" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2024-sjmss-stair.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• Yin M, Zheng H, Bai M, Huang G, Chen Z, Deng S, Lyu M, Deng J, <span class="me">Zhang B</span>, et al.</div>
+          <div class="pub-title">Effects of integrating stair climbing-based exercise snacks into the campus on feasibility, perceived efficacy, and participation perspectives in inactive young adults</div>
+          <div class="pub-venue"><em>Scandinavian Journal of Medicine &amp; Science in Sports</em>, 2024, 34(12): e14771</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2024</span><span class="pub-tag tag-sci">SCI · 21 citations</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://doi.org/10.1111/sms.14771" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2024-sportsmedicine-comment.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• Yin M, Li H, <span class="me">Zhang B</span>, Li Y.</div>
+          <div class="pub-title">Comment on "exercise snacks and other forms of intermittent physical activity for improving health in adults and older adults: a scoping review"</div>
+          <div class="pub-venue"><em>Sports Medicine</em>, 2024, 54(8): 2199–2203</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2024</span><span class="pub-tag tag-sci">SCI</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://doi.org/10.1007/s40279-024-02059-4" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2024-jesf-covid-cardio.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• Deng S, Yin M, Chen Z, Deng J, Wang Z, Li Y, Lyu M, <span class="me">Zhang B</span>, Zhu S, et al.</div>
+          <div class="pub-title">SARS-CoV-2 infection decreases cardiorespiratory fitness and time-trial performance even two months after returning to regular training</div>
+          <div class="pub-venue"><em>Journal of Exercise Science &amp; Fitness</em>, 2024, 22(4): 350–358</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2024</span><span class="pub-tag tag-sci">SCI</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://doi.org/10.1016/j.jesf.2024.04.003" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <!-- ── 2023 ── -->
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2023-jesf-return.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• Deng S, Deng J, Yin M, Li Y, Chen Z, Nassis GP, Zhu S, Hu S, <span class="me">Zhang B</span>, et al.</div>
+          <div class="pub-title">Short-term effects of SARS-CoV-2 infection and return to sport on neuromuscular performance, body composition, and mental health — a case series of well-trained young kayakers</div>
+          <div class="pub-venue"><em>Journal of Exercise Science &amp; Fitness</em>, 2023, 21(4): 345–353</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2023</span><span class="pub-tag tag-sci">SCI</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://doi.org/10.1016/j.jesf.2023.05.003" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <!-- ── 2022 ── -->
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2022-frontpsych-covid.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• <span class="me">Zhang B</span>, Lei SM, Le S, Gong Q, Cheng S, Wang X.</div>
+          <div class="pub-title">Changes in health behaviors and conditions during COVID-19 pandemic strict campus lockdown among Chinese university students</div>
+          <div class="pub-venue"><em>Frontiers in Psychology</em>, 2022, 13: 1022966</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2022</span><span class="pub-tag tag-first">First Author</span><span class="pub-tag tag-sci">SCI · 28 citations</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://doi.org/10.3389/fpsyg.2022.1022966" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2022-smhs-sleep.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• <span class="me">Zhang B</span>, Bender A, Tan X, Wang X, Le S, Cheng S.</div>
+          <div class="pub-title">Assessment of sleep disturbances with the athlete sleep screening questionnaire in Chinese athletes</div>
+          <div class="pub-venue"><em>Sports Medicine and Health Science</em>, 2022, 4(2): 133–139</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2022</span><span class="pub-tag tag-first">First Author</span><span class="pub-tag tag-sci">SCI · 24 citations</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://doi.org/10.1016/j.smhs.2022.01.003" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <!-- ── 2021 ── -->
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2021-ssr-fifa.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• <span class="me">Zhang B</span>, Ye Z, Bai C, Chen M, Yu Z, Li Y.</div>
+          <div class="pub-title">Acute effects of FIFA11+ warm-up on agility and leg power of 2nd league female soccer players</div>
+          <div class="pub-venue"><em>Sport Science Research</em>, 2021, 42(3)</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2021</span><span class="pub-tag tag-first">First Author</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+      <!-- ── 2020 ── -->
+      <div class="pub-card">
+        <div class="pub-img-wrap empty">
+          <img src="/img/papers/2020-ijerph-covid.jpg" alt="paper figure"
+               onload="this.parentElement.classList.remove('empty')"
+               onerror="this.parentElement.classList.add('empty')">
+        </div>
+        <div class="pub-body">
+          <div class="pub-authors">• Wang X, Lei SM, Le S, Yang Y, <span class="me">Zhang B</span>, Yao W, Gao Z, Cheng S.</div>
+          <div class="pub-title">Bidirectional influence of the COVID-19 pandemic lockdowns on health behaviors and quality of life among Chinese adults</div>
+          <div class="pub-venue"><em>International Journal of Environmental Research and Public Health</em>, 2020, 17(15): 5575</div>
+          <div class="pub-meta"><span class="pub-tag tag-year">2020</span><span class="pub-tag tag-sci">SCI · 252 citations</span></div>
+          <div class="pub-links"><a class="pub-link" href="https://doi.org/10.3390/ijerph17155575" target="_blank">[Web]</a></div>
+        </div>
+      </div>
+
+    </div><!-- /#pub-list -->
+
+    <p style="margin-top:20px; color:var(--muted); font-size:13px;">
+      💡 <strong>To add paper figures:</strong> save the first figure of each paper as
+      <code>/img/papers/YYYY-journal-keyword.jpg</code> — images appear automatically when present.
     </p>
   </section>
 
@@ -491,15 +636,14 @@
         <span class="contact-icon">🎓</span>
         <div>
           <strong>Google Scholar</strong><br>
-          <a href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ&hl=en"
-             target="_blank">Boyi Zhang</a>
+          <a href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ&hl=en" target="_blank">Boyi Zhang (420+ citations)</a>
         </div>
       </div>
       <div class="contact-item">
-        <span class="contact-icon">🐙</span>
+        <span class="contact-icon">📺</span>
         <div>
-          <strong>GitHub</strong><br>
-          <a href="https://github.com/boyee-zby" target="_blank">boyee-zby</a>
+          <strong>Bilibili</strong><br>
+          <a href="https://space.bilibili.com/214523135" target="_blank">@Boyee</a>
         </div>
       </div>
     </div>

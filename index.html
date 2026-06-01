@@ -1,1001 +1,518 @@
-
-
 <!DOCTYPE html>
-<html lang="en" data-default-color-scheme=&#34;auto&#34;>
-
-
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.jpg">
-  <link rel="icon" type="image/png" href="/img/icon.jpg">
- <meta name="google-site-verification" content="IXiMIozQD_34EvkidagygNhPQaPUzfJrKoJtMftMvxI" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#1a6b5a">
-  <meta name="description" content="Personal academic website of Boyi Zhang, PhD student in Physical Education &amp; Sport Science at Shanghai Jiao Tong University, specialising in exercise physiology, training monitoring, and fitness assessment.">
-  <meta name="author" content="Boyi Zhang">
-  <meta name="keywords" content="Boyi Zhang, Boyi Zhang DSHS, Sports Science, Exercise Physiology, Training Monitoring, Physical Activity, Deutsche Sporthochschule Köln, Shanghai Jiao Tong University">
-  <title>Boyi Zhang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boyi Zhang | Sport Scientist</title>
+  <meta name="description" content="Personal academic website of Boyi Zhang, PhD student in Sport Science at Deutsche Sporthochschule Köln and Shanghai Jiao Tong University, specialising in exercise physiology and training monitoring.">
+  <meta name="keywords" content="Boyi Zhang, Sport Science, Exercise Physiology, Training Monitoring, DSHS Cologne, Shanghai Jiao Tong University">
+  <meta name="google-site-verification" content="OuaHBXNCAcBdxynFAIiPC3vYrtRuOzu7-ejrKeQMRUg">
+  <link rel="icon" href="/img/favicon.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+    :root {
+      --green:  #1a6b5a;
+      --green-light: #e6f4f0;
+      --text:   #2c3e50;
+      --muted:  #718096;
+      --border: #e2e8f0;
+      --white:  #ffffff;
+      --bg:     #f8fafb;
+    }
 
+    html { scroll-behavior: smooth; }
 
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                   'Helvetica Neue', Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.75;
+      background: var(--white);
+      font-size: 15px;
+    }
 
-<!-- 主题依赖的图标库，不要自行修改 -->
+    /* ── Navigation ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: var(--green);
+      box-shadow: 0 2px 8px rgba(0,0,0,.18);
+    }
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+    nav ul {
+      max-width: 900px;
+      margin: 0 auto;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 16px;
+    }
 
+    nav a {
+      display: block;
+      color: rgba(255,255,255,.92);
+      text-decoration: none;
+      padding: 13px 15px;
+      font-size: 13.5px;
+      font-weight: 500;
+      letter-spacing: .3px;
+      transition: background .15s;
+    }
 
+    nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+    /* ── Layout ── */
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
+    section {
+      padding: 52px 0 44px;
+      border-bottom: 1px solid var(--border);
+    }
 
-<link  rel="stylesheet" href="/css/main.css" />
+    section:last-of-type { border-bottom: none; }
 
-<!-- 自定义样式保持在最底部 -->
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
+    h2::after {
+      content: '';
+      display: block;
+      flex: 1;
+      height: 2px;
+      background: var(--border);
+      margin-left: 12px;
+    }
 
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="Boyi Zhang" type="application/atom+xml">
+    /* ── Profile ── */
+    #about {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      padding: 52px 0;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 3px solid var(--green);
+      box-shadow: 0 4px 16px rgba(26,107,90,.2);
+    }
+
+    .bio h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .bio .pos {
+      color: var(--muted);
+      font-size: .95rem;
+      margin-bottom: 2px;
+    }
+
+    .bio .inst {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 14px;
+    }
+
+    .bio p { max-width: 580px; color: #444; margin-bottom: 18px; }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity .15s, transform .15s;
+    }
+
+    .badge:hover { opacity: .85; transform: translateY(-1px); }
+    .badge-scholar { background: #4285f4; color: #fff; }
+    .badge-email   { background: #ea4335; color: #fff; }
+    .badge-github  { background: #24292e; color: #fff; }
+    .badge-bili    { background: #00a1d6; color: #fff; }
+
+    /* ── News ── */
+    .news-row {
+      display: flex;
+      gap: 16px;
+      padding: 9px 0;
+      border-bottom: 1px dashed var(--border);
+      align-items: baseline;
+    }
+
+    .news-row:last-child { border-bottom: none; }
+
+    .news-date {
+      min-width: 82px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--green);
+      white-space: nowrap;
+    }
+
+    .news-text { color: var(--text); }
+
+    /* ── Education ── */
+    .edu-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 22px;
+      padding-left: 4px;
+      border-left: 3px solid var(--green);
+      padding-left: 16px;
+    }
+
+    .edu-item:last-child { margin-bottom: 0; }
+
+    .edu-title { font-weight: 700; margin-bottom: 2px; }
+    .edu-inst  { color: #444; }
+    .edu-when  { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+
+    /* ── Research interests ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 16px 0 24px;
+    }
+
+    .tag {
+      padding: 5px 15px;
+      border-radius: 999px;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid #b2d8cc;
+    }
+
+    .project-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-top: 10px;
+    }
+
+    .project-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+    .project-card .status {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #fff3cd;
+      color: #856404;
+      margin-bottom: 8px;
+    }
+
+    /* ── Publications ── */
+    .scholar-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--green);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: opacity .15s;
+    }
+
+    .scholar-cta:hover { opacity: .85; }
+
+    .pub-item {
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 14px;
+      transition: box-shadow .15s;
+    }
+
+    .pub-item:hover { box-shadow: 0 3px 14px rgba(0,0,0,.07); }
+    .pub-title { font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .pub-meta  { font-size: 13px; color: var(--muted); }
+    .pub-links { margin-top: 8px; display: flex; gap: 8px; }
+    .pub-link  {
+      font-size: 12px;
+      padding: 2px 10px;
+      border-radius: 4px;
+      background: var(--green-light);
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #b2d8cc;
+    }
+
+    .pub-link:hover { background: var(--green); color: #fff; }
+
+    /* ── Contact ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 8px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-item a { color: var(--green); text-decoration: none; font-weight: 600; }
+    .contact-item a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 22px;
+      background: var(--bg);
+      color: var(--muted);
+      font-size: 12.5px;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--green); text-decoration: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      #about { flex-direction: column; align-items: center; text-align: center; }
+      .bio p { max-width: 100%; }
+      .badges { justify-content: center; }
+      .contact-grid { grid-template-columns: 1fr; }
+      nav a { padding: 11px 10px; font-size: 12.5px; }
+    }
+  </style>
 </head>
-
-
 <body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Boyi Zhang</strong>&nbsp;</a>
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                Home
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/research/">
-                <i class="iconfont icon-book-fill"></i>
-                Research
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/publications/">
-                <i class="iconfont icon-archive-fill"></i>
-                Publications
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                Notes
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                About
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
-          </li>
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+<!-- ── Navigation ── -->
+<nav>
+  <ul>
+    <li><a href="#about">👤 About</a></li>
+    <li><a href="#news">🔥 News</a></li>
+    <li><a href="#education">🎓 Education</a></li>
+    <li><a href="#research">🔬 Research</a></li>
+    <li><a href="#publications">📝 Publications</a></li>
+    <li><a href="#contact">📬 Contact</a></li>
+    <li><a href="/blog/">✏️ Blog</a></li>
+  </ul>
 </nav>
 
-    <div class="banner intro-2" id="background" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="container page-header text-center fade-in-up">
-            <span class="h2" id="subtitle">
-              
-            </span>
-
-            
-          </div>
-
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
-          
-        </div>
+<!-- ── About / Profile ── -->
+<div class="wrap">
+  <section id="about">
+    <img src="/img/profile.jpg" alt="Boyi Zhang" class="avatar">
+    <div class="bio">
+      <h1>Boyi Zhang</h1>
+      <p class="pos">PhD Student in Sport Science</p>
+      <p class="inst">Deutsche Sporthochschule Köln &nbsp;·&nbsp; Shanghai Jiao Tong University</p>
+      <p>
+        I am a sport scientist interested in how the human body responds and adapts to
+        exercise training. My work focuses on <strong>exercise physiology</strong>,
+        <strong>training load monitoring</strong>, and <strong>physical fitness assessment</strong>,
+        with the goal of bridging laboratory insights and real-world athletic performance.
+      </p>
+      <div class="badges">
+        <a class="badge badge-scholar"
+           href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ&hl=en"
+           target="_blank">🎓 Google Scholar</a>
+        <a class="badge badge-email"
+           href="mailto:boyi.zhang@stud.dshs-koeln.de">✉️ Email</a>
+        <a class="badge badge-github"
+           href="https://github.com/boyee-zby"
+           target="_blank">🐙 GitHub</a>
+        <a class="badge badge-bili"
+           href="https://space.bilibili.com/214523135"
+           target="_blank">📺 Bilibili</a>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+  <!-- ── News ── -->
+  <section id="news">
+    <h2>🔥 News</h2>
 
+    <div class="news-row">
+      <span class="news-date">Jun 2026</span>
+      <span class="news-text">Personal academic website relaunched with updated content.</span>
+    </div>
+    <div class="news-row">
+      <span class="news-date">2024</span>
+      <span class="news-text">Started PhD studies at Deutsche Sporthochschule Köln (DSHS Cologne), Germany.</span>
+    </div>
+    <div class="news-row">
+      <span class="news-date">2020–2024</span>
+      <span class="news-text">Pursued M.Ed. in Physical Education & Sport Science at Shanghai Jiao Tong University under the supervision of Prof. Sulin Cheng.</span>
+    </div>
+    <div class="news-row">
+      <span class="news-date">Jun 2020</span>
+      <span class="news-text">Graduated with B.Ed. in Athletic Training (Physical Fitness Track) from Shanghai University of Sport.</span>
+    </div>
+  </section>
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/12/09/%E7%A7%91%E6%99%AE%EF%BC%9A%E4%BA%BA%E4%BD%93%E8%BF%90%E5%8A%A8%E7%9A%84%E6%9C%AC%E8%B4%A8/" target="_self">
-          <img src="/img/movement2.jpg" srcset="/img/loading.gif" alt="人体运动的本质：动作和能量代谢">
-        </a>
+  <!-- ── Education ── -->
+  <section id="education">
+    <h2>🎓 Education</h2>
+
+    <div class="edu-item">
+      <div>
+        <div class="edu-title">PhD in Sport Science</div>
+        <div class="edu-inst">Deutsche Sporthochschule Köln (DSHS Cologne), Germany</div>
+        <div class="edu-when">2024 – present</div>
       </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/12/09/%E7%A7%91%E6%99%AE%EF%BC%9A%E4%BA%BA%E4%BD%93%E8%BF%90%E5%8A%A8%E7%9A%84%E6%9C%AC%E8%B4%A8/">人体运动的本质：动作和能量代谢</a>
-      </h1>
+    </div>
 
-      <p class="index-excerpt">
-        <a href="/2020/12/09/%E7%A7%91%E6%99%AE%EF%BC%9A%E4%BA%BA%E4%BD%93%E8%BF%90%E5%8A%A8%E7%9A%84%E6%9C%AC%E8%B4%A8/">
-          
-          
-            
-          
-          写在前面人体运动是化学能转换为机械能的过程，其涉及产生能量和利用能量两个环节，二者分别与能量代谢和动作有关。掌握人体运动的本质，能够帮助你科学的分析不同场景下各式各样的动作，提高动作效率，降低由动作不当引起的损伤风险。
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-12-09 14:22" pubdate>
-              2020-12-09
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%BF%90%E5%8A%A8%E7%A7%91%E5%AD%A6%E7%9F%A5%E8%AF%86/">运动科学知识</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Study-Research-Self-Development/">Study,Research,Self Development</a>
-            
-          </div>
-        
+    <div class="edu-item">
+      <div>
+        <div class="edu-title">M.Ed. in Physical Education & Sport Science</div>
+        <div class="edu-inst">Shanghai Jiao Tong University, China &nbsp;·&nbsp; Supervisor: Prof. Sulin Cheng</div>
+        <div class="edu-when">2020 – 2024</div>
       </div>
-    </article>
-  </div>
+    </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/11/10/%E7%A7%91%E6%99%AE%EF%BC%9A%E5%8A%9F%E8%83%BD%E6%80%A7%E5%8A%A8%E4%BD%9C%E7%AD%9B%E6%9F%A5FMS/" target="_self">
-          <img src="/img/FMS1.jpg" srcset="/img/loading.gif" alt="FMS测试——成本低易上手的损伤预防测试">
-        </a>
+    <div class="edu-item">
+      <div>
+        <div class="edu-title">B.Ed. in Athletic Training (Physical Fitness Track)</div>
+        <div class="edu-inst">Shanghai University of Sport, China &nbsp;·&nbsp; Supervisor: Prof. Yongming Li</div>
+        <div class="edu-when">2016 – 2020</div>
       </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/11/10/%E7%A7%91%E6%99%AE%EF%BC%9A%E5%8A%9F%E8%83%BD%E6%80%A7%E5%8A%A8%E4%BD%9C%E7%AD%9B%E6%9F%A5FMS/">FMS测试——成本低易上手的损伤预防测试</a>
-      </h1>
+    </div>
+  </section>
 
-      <p class="index-excerpt">
-        <a href="/2020/11/10/%E7%A7%91%E6%99%AE%EF%BC%9A%E5%8A%9F%E8%83%BD%E6%80%A7%E5%8A%A8%E4%BD%9C%E7%AD%9B%E6%9F%A5FMS/">
-          
-          
-            
-          
-          写在前面功能性动作测试(Functional movement screen,FMS)是诊断动作障碍的方法之一，于2001年在美国被理疗师Gray Cook提出。说到FMS的起源，就离不开物理治疗（Physical Therapy）这一大背景。物理治疗诞生于第二次世界大战之后，历经60年的演变，完成了技术工种到专业学科的转变。在20世纪90年代后，随着骨骼肌肉疼痛患者的增多，物理治疗开始综合考虑骨
-        </a>
-      </p>
+  <!-- ── Research ── -->
+  <section id="research">
+    <h2>🔬 Research</h2>
+    <p>My research sits at the intersection of exercise physiology and applied sports performance science. I am particularly interested in understanding how the body responds to training stress and how we can better monitor and optimise athlete readiness.</p>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-11-10 16:15" pubdate>
-              2020-11-10
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%BF%90%E5%8A%A8%E7%A7%91%E5%AD%A6%E7%9F%A5%E8%AF%86/">运动科学知识</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Study-Research/">Study,Research</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
+    <div class="tags">
+      <span class="tag">Exercise Physiology</span>
+      <span class="tag">Training Monitoring & Evaluation</span>
+      <span class="tag">Physical Fitness Assessment</span>
+      <span class="tag">Energy Metabolism</span>
+      <span class="tag">Warm-up Protocols</span>
+      <span class="tag">Functional Movement Screening</span>
+    </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/10/27/%E4%BA%A4%E5%A4%A7%E7%AC%AC%E5%9B%9B%E5%B1%8A%E5%AD%A6%E6%9C%AF%E4%B9%8B%E6%98%9F%E8%AE%B2%E5%BA%A7%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/" target="_self">
-          <img src="/img/%E6%A0%A1%E9%97%A8.jpg" srcset="/img/loading.gif" alt="上海交通大学第四届学术之星分享会——个人笔记">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/10/27/%E4%BA%A4%E5%A4%A7%E7%AC%AC%E5%9B%9B%E5%B1%8A%E5%AD%A6%E6%9C%AF%E4%B9%8B%E6%98%9F%E8%AE%B2%E5%BA%A7%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/">上海交通大学第四届学术之星分享会——个人笔记</a>
-      </h1>
+    <div class="project-card">
+      <h4>Warm-up Protocols and Athletic Performance</h4>
+      <span class="status">In Progress</span>
+      <p>Investigating the dose-response relationship between warm-up structure, duration, and subsequent performance indicators in trained athletes.</p>
+    </div>
+  </section>
 
-      <p class="index-excerpt">
-        <a href="/2020/10/27/%E4%BA%A4%E5%A4%A7%E7%AC%AC%E5%9B%9B%E5%B1%8A%E5%AD%A6%E6%9C%AF%E4%B9%8B%E6%98%9F%E8%AE%B2%E5%BA%A7%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/">
-          
-          
-            
-          
-          写在前面榜样在身边，优秀的人总自带光芒，能够到现场听这些身上有光的学长学姐做分享，并将个人笔记和所思所想与大家分享，我心怀感激。希望这些从他们身上收获的能量，能够支持我将这些光照到更远的地方，为更多“有心人”提供一些帮助；
-        </a>
-      </p>
+  <!-- ── Publications ── -->
+  <section id="publications">
+    <h2>📝 Publications</h2>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-10-27 09:24" pubdate>
-              2020-10-27
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8F%91%E5%B1%95-%E6%96%B0%E6%8A%80%E8%83%BD%E5%8F%8A%E6%96%B0%E8%A7%86%E9%87%8E/">个人发展,新技能及新视野</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Study-Research-Self-Development/">Study,Research,Self Development</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/10/19/%E7%A7%91%E6%99%AE%EF%BC%9A%E7%AB%9E%E6%8A%80%E4%BD%93%E8%82%B2%E4%B8%AD%E5%B8%B8%E8%AF%B4%E7%9A%84%E6%A0%B8%E5%BF%83%E5%8A%9B%E9%87%8F%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" target="_self">
-          <img src="/img/planktraining.jpg" srcset="/img/loading.gif" alt="竞技体育中常说的核心力量到底是什么？">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/10/19/%E7%A7%91%E6%99%AE%EF%BC%9A%E7%AB%9E%E6%8A%80%E4%BD%93%E8%82%B2%E4%B8%AD%E5%B8%B8%E8%AF%B4%E7%9A%84%E6%A0%B8%E5%BF%83%E5%8A%9B%E9%87%8F%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/">竞技体育中常说的核心力量到底是什么？</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/10/19/%E7%A7%91%E6%99%AE%EF%BC%9A%E7%AB%9E%E6%8A%80%E4%BD%93%E8%82%B2%E4%B8%AD%E5%B8%B8%E8%AF%B4%E7%9A%84%E6%A0%B8%E5%BF%83%E5%8A%9B%E9%87%8F%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/">
-          
-          
-            
-          
-          写在前面影响我们生活的核心力量，到底是什么？ 在竞技体育中扮演着怎样的角色？ 看完视频后答案自然揭晓~视频内容来源：《论核心力量及其在竞技体育中的训练—起源·问题·发展》——黎涌明等,2008.今天与大家分享有关核心力量的科普视频，欢迎大家留言讨论；注意：视频只是文章缩影，并不全面，获得更多信息请阅读原文；
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-10-19 08:53" pubdate>
-              2020-10-19
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%BF%90%E5%8A%A8%E7%A7%91%E5%AD%A6%E7%9F%A5%E8%AF%86/">运动科学知识</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Study-Research-Self-Development/">Study,Research,Self Development</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/10/14/%E7%A7%91%E6%99%AE%EF%BC%9AFIFIA%2011+%20%E7%83%AD%E8%BA%AB%E7%BB%83%E4%B9%A0%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" target="_self">
-          <img src="/img/FIFA11+.jpg" srcset="/img/loading.gif" alt="什么是FIFA11+热身练习？">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/10/14/%E7%A7%91%E6%99%AE%EF%BC%9AFIFIA%2011+%20%E7%83%AD%E8%BA%AB%E7%BB%83%E4%B9%A0%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/">什么是FIFA11+热身练习？</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/10/14/%E7%A7%91%E6%99%AE%EF%BC%9AFIFIA%2011+%20%E7%83%AD%E8%BA%AB%E7%BB%83%E4%B9%A0%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/">
-          
-          
-            
-          
-          写在前面许多研究证明，FIFA11+热身练习不仅能够降低足球运动员的损伤发生率，还可在一定程度上提高运动表现；那么FIFA11+热身练习都包含了哪些动作？由哪些部分组成？是否真的可以作为教练员们、球员们的热身选择呢；今天与大家分享有关FIFA11+的科普视频，欢迎大家留言讨论；
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-10-14 00:31" pubdate>
-              2020-10-14
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%BF%90%E5%8A%A8%E7%A7%91%E5%AD%A6%E7%9F%A5%E8%AF%86/">运动科学知识</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Study-Research-Self-Development/">Study,Research,Self Development</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/10/12/%20%E9%AB%98%E4%BA%A7%E5%AD%A6%E8%80%85%E7%9A%84%E5%B7%A5%E4%BD%9C%E4%B9%A0%E6%83%AF%E5%8F%8A%E6%96%B9%E5%BC%8F%E5%AD%A6%E4%B9%A0/" target="_self">
-          <img src="/img/researchwork.jpg" srcset="/img/loading.gif" alt="高产学者的工作习惯及方式学习——网文笔记">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/10/12/%20%E9%AB%98%E4%BA%A7%E5%AD%A6%E8%80%85%E7%9A%84%E5%B7%A5%E4%BD%9C%E4%B9%A0%E6%83%AF%E5%8F%8A%E6%96%B9%E5%BC%8F%E5%AD%A6%E4%B9%A0/">高产学者的工作习惯及方式学习——网文笔记</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/10/12/%20%E9%AB%98%E4%BA%A7%E5%AD%A6%E8%80%85%E7%9A%84%E5%B7%A5%E4%BD%9C%E4%B9%A0%E6%83%AF%E5%8F%8A%E6%96%B9%E5%BC%8F%E5%AD%A6%E4%B9%A0/">
-          
-          
-            
-          
-          写在前面作为一名研究生，科研压力一定逃不了。但是如果能够站在巨人的肩膀上出发，对我们现在及未来的科研学习都会有很大的帮助~在此与大家分享一篇有关科研学者的高效学习和工作方式的个人阅读笔记，希望和我一样的科研小白看到后能够找到努力的方向，一起成长，共勉；
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-10-12 07:04" pubdate>
-              2020-10-12
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E4%B8%AA%E4%BA%BA%E5%8F%91%E5%B1%95/">个人发展</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Study-Research-Self-Development/">Study,Research,Self Development</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/10/09/Exercise%20Physiology%20Assignment/" target="_self">
-          <img src="/img/type-assignment.jpg" srcset="/img/loading.gif" alt="体成分测量对比及优缺点辨析——运动生理学作业">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/10/09/Exercise%20Physiology%20Assignment/">体成分测量对比及优缺点辨析——运动生理学作业</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/10/09/Exercise%20Physiology%20Assignment/">
-          
-          
-            
-          
-          写在前面该文章是我在10.9日运动生理学课堂展示的内容（作业），文章内容仅供参考；
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-10-09 09:00" pubdate>
-              2020-10-09
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%BF%90%E5%8A%A8%E7%A7%91%E5%AD%A6%E7%9F%A5%E8%AF%86/">运动科学知识</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Study-Research/">Study,Research</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/10/06/hello-world/" target="_self">
-          <img src="/img/smile.jpg" srcset="/img/loading.gif" alt="Hello World--第一篇Blog">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/10/06/hello-world/">Hello World--第一篇Blog</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/10/06/hello-world/">
-          
-          
-            
-          
-          首先，Welcome to there!国庆和中秋放了八天小长假，本来有很多想去玩的地方，但是因为工作、生病而搁置了。不想浪费时间就做了一个博客~希望以后能坚持输出，为大家带来有趣有意义的分享。
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-10-06 14:40" pubdate>
-              2020-10-06
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E6%96%B0%E6%8A%80%E8%83%BD%E5%8F%8A%E6%96%B0%E8%A7%86%E9%87%8E/">新技能及新视野</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Life-Diary/">Life,Diary</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-
-
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-  </main>
-
-  
-    <a id="scroll-top-button" href="#" role="button">
-      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    <a class="scholar-cta"
+       href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ&hl=en"
+       target="_blank">
+      🎓 View full list on Google Scholar
     </a>
-  
 
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+    <!-- Add papers here as they are published. Example format below: -->
+    <!--
+    <div class="pub-item">
+      <div class="pub-title">Paper Title Here</div>
+      <div class="pub-meta">Journal Name · Year · Vol(Issue): pages</div>
+      <div class="pub-links">
+        <a class="pub-link" href="https://doi.org/..." target="_blank">DOI</a>
+        <a class="pub-link" href="/papers/filename.pdf" target="_blank">PDF</a>
       </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">keyword</label>
+    </div>
+    -->
+
+    <p style="color:#718096; font-style:italic;">
+      Publications will be listed here as they are accepted.
+      Please check Google Scholar for the most current list.
+    </p>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section id="contact">
+    <h2>📬 Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span class="contact-icon">✉️</span>
+        <div>
+          <strong>Email</strong><br>
+          <a href="mailto:boyi.zhang@stud.dshs-koeln.de">boyi.zhang@stud.dshs-koeln.de</a>
         </div>
-        <div class="list-group" id="local-search-result"></div>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">🏛️</span>
+        <div>
+          <strong>Address</strong><br>
+          Deutsche Sporthochschule Köln<br>
+          Am Sportpark Müngersdorf 6<br>
+          50933 Cologne, Germany
+        </div>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">🎓</span>
+        <div>
+          <strong>Google Scholar</strong><br>
+          <a href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ&hl=en"
+             target="_blank">Boyi Zhang</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">🐙</span>
+        <div>
+          <strong>GitHub</strong><br>
+          <a href="https://github.com/boyee-zby" target="_blank">boyee-zby</a>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-  
+  </section>
 
-  
+</div><!-- /.wrap -->
 
-  
-    <div class="col-lg-7 mx-auto nopadding-md">
-      <div class="container custom mx-auto">
-        <meta name="google-site-verification" content="OuaHBXNCAcBdxynFAIiPC3vYrtRuOzu7-ejrKeQMRUg" />
-      </div>
-    </div>
-  
-
-  
-<footer class="mt-5">
-  <div class="text-center py-3">
-    <div>
-      <a href="https://boyee-zby.github.io/" target="_blank" rel="nofollow noopener"><span>收藏关注</span></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://boyee-zby.github.io/" target="_blank" rel="nofollow noopener">
-        <span>Zbyboyee</span></a>
-    </div>
-    
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- LeanCloud 统计PV -->
-        <span id="leancloud-site-pv-container" style="display: none">
-            
-            <span id="leancloud-site-pv"></span>
-             visits
-          </span>
-      
-      
-        <!-- LeanCloud 统计UV -->
-        <span id="leancloud-site-uv-container" style="display: none">
-            
-            <span id="leancloud-site-uv"></span>
-             visitors
-          </span>
-      
-
-    
-  </div>
-
-
-    
-
-    
-<div>
-  <span id="timeDate">载入天数...</span>
-  <span id="times">载入时分秒...</span>
-  <script>
-  var now = new Date();
-  function createtime(){
-      var grt= new Date("10/06/2020 23:17:15");//此处修改你的建站时间或者网站上线时间
-      now.setTime(now.getTime()+250);
-      days = (now - grt ) / 1000 / 60 / 60 / 24;
-      dnum = Math.floor(days);
-      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
-      hnum = Math.floor(hours);
-      if(String(hnum).length ==1 ){
-          hnum = "0" + hnum;
-      }
-      minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-      mnum = Math.floor(minutes);
-      if(String(mnum).length ==1 ){
-                mnum = "0" + mnum;
-      }
-      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-      snum = Math.round(seconds);
-      if(String(snum).length ==1 ){
-                snum = "0" + snum;
-      }
-      document.getElementById("timeDate").innerHTML = "本站已安全运行&nbsp"+dnum+"&nbsp天";
-      document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
-  }
-  setInterval("createtime()",250);
-  </script>
-  </div>
-   <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=210 height=105 src="//music.163.com/outchain/player?type=2&id=1348568908&auto=0&height=66"></iframe>
+<footer>
+  <p>© 2026 Boyi Zhang &nbsp;·&nbsp;
+     <a href="https://boyee-zby.github.io">boyee-zby.github.io</a>
+     &nbsp;·&nbsp; Last updated: June 2026
+  </p>
 </footer>
-
-<!-- SCRIPTS -->
-<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
-<script  src="/js/main.js" ></script>
-
-<!-- Plugins -->
-
-
-  
-    <script  src="/js/lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
-  <script  src="/js/clipboard-use.js" ></script>
-
-
-
-  <script defer>
-  (function () {
-    // 查询存储的记录
-    function getRecord(Counter, target) {
-      return new Promise(function (resolve, reject) {
-        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
-          .then(resp => resp.json())
-          .then(({results, code, error}) => {
-            if (code === 401) {
-              throw error;
-            }
-            if (results && results.length > 0) {
-              var record = results[0];
-              resolve(record);
-            } else {
-              Counter('post', '/classes/Counter', {target, time: 0})
-                .then(resp => resp.json())
-                .then((record, error) => {
-                  if (error) {
-                    throw error;
-                  }
-                  resolve(record);
-                }).catch(error => {
-                console.error('Failed to create', error);
-                reject(error);
-              });
-            }
-          }).catch((error) => {
-          console.error('LeanCloud Counter Error:', error);
-          reject(error);
-        });
-      })
-    }
-
-    // 发起自增请求
-    function increment(Counter, incrArr) {
-      return new Promise(function (resolve, reject) {
-        Counter('post', '/batch', {
-          "requests": incrArr
-        }).then((res) => {
-          res = res.json();
-          if (res.error) {
-            throw res.error;
-          }
-          resolve(res);
-        }).catch((error) => {
-          console.error('Failed to save visitor count', error);
-          reject(error);
-        });
-      });
-    }
-
-    // 构建自增请求体
-    function buildIncrement(objectId) {
-      return {
-        "method": "PUT",
-        "path": `/1.1/classes/Counter/${ objectId }`,
-        "body": {
-          "time": {
-            '__op': 'Increment',
-            'amount': 1
-          }
-        }
-      }
-    }
-
-    // 校验是否为有效的 UV
-    function validUV() {
-      var key = 'LeanCloud_UV_Flag';
-      var flag = localStorage.getItem(key);
-      if (flag) {
-        // 距离标记小于 24 小时则不计为 UV
-        if (new Date().getTime() - parseInt(flag) <= 86400000) {
-          return false;
-        }
-      }
-      localStorage.setItem(key, new Date().getTime().toString());
-      return true;
-    }
-
-    function addCount(Counter) {
-      var enableIncr = 'true' === 'true' && window.location.hostname !== 'localhost';
-      var getterArr = [];
-      var incrArr = [];
-
-      // 请求 PV 并自增
-      var pvCtn = document.querySelector('#leancloud-site-pv-container');
-      if (pvCtn || enableIncr) {
-        var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
-          incrArr.push(buildIncrement(record.objectId))
-          var ele = document.querySelector('#leancloud-site-pv');
-          if (ele) {
-            ele.innerText = record.time + 1;
-            if (pvCtn) {
-              pvCtn.style.display = 'inline';
-            }
-          }
-        });
-        getterArr.push(pvGetter);
-      }
-
-      // 请求 UV 并自增
-      var uvCtn = document.querySelector('#leancloud-site-uv-container');
-      if (uvCtn || enableIncr) {
-        var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
-          var vuv = validUV();
-          vuv && incrArr.push(buildIncrement(record.objectId))
-          var ele = document.querySelector('#leancloud-site-uv');
-          if (ele) {
-            ele.innerText = record.time + (vuv ? 1 : 0);
-            if (uvCtn) {
-              uvCtn.style.display = 'inline';
-            }
-          }
-        });
-        getterArr.push(uvGetter);
-      }
-
-      // 如果是文章，请求文章的浏览数，并自增
-      if ('false' === 'true') {
-        var viewCtn = document.querySelector('#leancloud-post-views-container');
-        if (viewCtn || enableIncr) {
-          var target = decodeURI('/index.html');
-          var viewGetter = getRecord(Counter, target).then((record) => {
-            incrArr.push(buildIncrement(record.objectId))
-            if (viewCtn) {
-              var ele = document.querySelector('#leancloud-post-views');
-              if (ele) {
-                ele.innerText = (record.time || 0) + 1;
-                viewCtn.style.display = 'inline';
-              }
-            }
-          });
-          getterArr.push(viewGetter);
-        }
-      }
-
-      // 如果启动计数自增，批量发起自增请求
-      if (enableIncr) {
-        Promise.all(getterArr).then(() => {
-          incrArr.length > 0 && increment(Counter, incrArr);
-        })
-      }
-    }
-
-    var app_id = 'N0ddaKIkYCGQXPeQchF6MTty-gzGzoHsz'
-    var app_key = 'QGwa65o1kFFiahlquPirIQTv'
-    var server_url = 'https://n0ddakik.lc-cn-n1-shared.com'
-
-    function fetchData(api_server) {
-      var Counter = (method, url, data) => {
-        return fetch(`${ api_server }/1.1${ url }`, {
-          method,
-          headers: {
-            'X-LC-Id': app_id,
-            'X-LC-Key': app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-
-      addCount(Counter);
-    }
-
-    var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
-
-    if (api_server) {
-      fetchData(api_server);
-    } else {
-      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
-        .then(resp => resp.json())
-        .then(({api_server}) => {
-          fetchData('https://' + api_server);
-        });
-    }
-  })();
-</script>
-
-
-
-
-
-
-
-
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "Exercise Physiology · Training Science · Curious Researcher&nbsp;",
-      ],
-      cursorChar: "_",
-      typeSpeed: 70,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
-
-
-
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
 
 </body>
 </html>

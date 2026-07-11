@@ -37,34 +37,38 @@ a{color:inherit}
 .nav-links{display:flex; gap:1.7rem; font-size:.92rem}
 .nav-links a{color:var(--muted); text-decoration:none; transition:color .15s}
 .nav-links a:hover{color:var(--ink)}
+.nav-links a.active{color:var(--accent-ink); font-weight:600}
 
-/* Mobile collapse toggle — pure CSS checkbox hack, no JS dependency,
-   mirrors the theme's Bootstrap navbar-toggler collapse behavior on
+/* Mobile collapse toggle — a real button + tiny inline script (see
+   pageShell() in scripts/generate-site.js), full-screen teal overlay,
+   matching the theme's Bootstrap navbar-toggler collapse behavior on
    /blog/ and other theme-rendered pages. */
-.nav-toggle-checkbox{display:none}
 .nav-toggle-btn{
-  display:none; flex-direction:column; justify-content:center; gap:5px;
-  width:26px; height:22px; cursor:pointer;
+  display:none; position:relative; flex-direction:column; justify-content:center; gap:5px;
+  width:26px; height:22px; cursor:pointer; background:none; border:0; padding:0;
 }
 .nav-toggle-btn span{
   display:block; height:2px; width:100%; background:var(--ink); border-radius:1px;
   transition:transform .2s ease, opacity .2s ease;
 }
-.nav-toggle-checkbox:checked ~ .nav-toggle-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.nav-toggle-checkbox:checked ~ .nav-toggle-btn span:nth-child(2){opacity:0}
-.nav-toggle-checkbox:checked ~ .nav-toggle-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-toggle-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle-btn.open span:nth-child(2){opacity:0}
+.nav-toggle-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 @media(max-width:720px){
   .nav-toggle-btn{display:flex}
   .nav-links{
-    display:none; flex-direction:column; gap:0;
-    position:absolute; top:100%; left:0; right:0;
-    background:#fff; border-bottom:1px solid var(--line);
-    padding:.25rem 24px .75rem;
+    display:none; flex-direction:column; align-items:center; gap:0;
+    position:fixed; top:62px; left:0; right:0; bottom:0;
+    background:var(--accent); padding:1.5rem 24px; overflow-y:auto;
   }
-  .nav-links a{padding:.65rem 0; border-bottom:1px solid var(--line)}
+  .nav-links.open{display:flex}
+  .nav-links a{
+    color:rgba(255,255,255,.92); width:100%; max-width:22rem; text-align:center;
+    padding:1rem 0; border-bottom:1px solid rgba(255,255,255,.15); font-size:1rem;
+  }
   .nav-links a:last-child{border-bottom:0}
-  .nav-toggle-checkbox:checked ~ .nav-links{display:flex}
+  .nav-links a:hover, .nav-links a.active{color:#fff; background:rgba(255,255,255,.08)}
 }
 
 /* ---- sections ---- */

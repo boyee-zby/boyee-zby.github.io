@@ -20,17 +20,16 @@
 <div class="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="/">Boyi Zhang <span>Sport Scientist</span></a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
-    <label for="nav-toggle" class="nav-toggle-btn" aria-label="Toggle navigation">
+    <button type="button" class="nav-toggle-btn" id="nav-toggle-btn" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
-    </label>
-    <nav class="nav-links">
-      <a href="/#about">About</a>
-      <a href="/#research">Research</a>
-      <a href="/publications/">Publications</a>
-      <a href="/activities/">Activities</a>
-      <a href="/#news">News</a>
-      <a href="/#contact">Contact</a>
+    </button>
+    <nav class="nav-links" id="nav-links">
+      <a href="/#about" class="">About</a>
+      <a href="/#research" class="">Research</a>
+      <a href="/publications/" class="">Publications</a>
+      <a href="/activities/" class="active">Activities</a>
+      <a href="/#news" class="">News</a>
+      <a href="/#contact" class="">Contact</a>
     </nav>
   </div>
 </div>
@@ -51,6 +50,25 @@
 </main>
 
 <footer class="wrap">© 2026 Boyi Zhang · boyee-zby.github.io · <a href="/blog/">Blog</a></footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('nav-toggle-btn');
+  var links = document.getElementById('nav-links');
+  btn.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      links.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

@@ -1,18 +1,8 @@
-/* Publications page — auto-generated entries */
+/* Publications page — pub-card entries */
 
-.page-content img[alt^="Figure"] {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0.75rem 0 1.5rem;
-  border-radius: 6px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
-}
-
-.page-content h2 {
+.section h2 {
   border-left: 4px solid #0c5f52;
   padding-left: 0.6rem;
-  margin-top: 2rem;
 }
 
 .pub-card {
@@ -74,4 +64,7 @@
 
 @media (max-width: 560px) {
   .pub-img-wrap { display: none; }
+  .pub-card { padding: 12px 0; }
+  .pub-title { font-size: 13.5px; }
+  .pub-authors, .pub-venue { font-size: 13px; }
 }

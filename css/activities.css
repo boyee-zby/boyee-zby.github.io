@@ -1,11 +1,11 @@
 /* Activities page (talks & posters) */
 
-.page-content .quick-access {
+.quick-access {
   display: flex;
   gap: 0.5rem;
   margin: 0 0 1.5rem;
 }
-.page-content .chip {
+.chip {
   font-size: 0.82rem;
   font-weight: 600;
   padding: 0.3rem 0.9rem;
@@ -14,29 +14,33 @@
   color: #0a4f44;
   text-decoration: none;
 }
-.page-content .chip:hover { background: #0c5f52; color: #fff; }
+.chip:hover { background: #0c5f52; color: #fff; }
 
-.page-content h2 {
+.section h2 {
   border-left: 4px solid #0c5f52;
   padding-left: 0.6rem;
-  margin-top: 2rem;
 }
 
-.page-content .talk-list { display: flex; flex-direction: column; }
-.page-content .talk-card {
+.talk-list { display: flex; flex-direction: column; }
+.talk-card {
   padding: 14px 0;
   border-bottom: 1px solid #e5eae9;
 }
-.page-content .talk-card:last-child { border-bottom: none; }
-.page-content .talk-card h3 { margin: 0 0 0.3rem; font-size: 1rem; }
-.page-content .talk-card h3 a { text-decoration: none; color: inherit; }
-.page-content .talk-card h3 a:hover { color: #0a4f44; }
+.talk-card:last-child { border-bottom: none; }
+.talk-card h3 { margin: 0 0 0.3rem; font-size: 1rem; }
+.talk-card h3 a { text-decoration: none; color: inherit; }
+.talk-card h3 a:hover { color: #0a4f44; }
 
-.page-content .talk-meta {
+.talk-meta {
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 0.8rem;
   color: #5c666b;
   margin: 0;
 }
 
-.page-content .talk-link { color: #0c5f52; font-weight: 600; }
+.talk-link { color: #0c5f52; font-weight: 600; }
+
+@media (max-width: 560px) {
+  .quick-access { flex-wrap: wrap; }
+  .talk-card h3 { font-size: 0.95rem; }
+}

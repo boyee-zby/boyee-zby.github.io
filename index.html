@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Boyi Zhang | Sport Scientist</title>
 <meta name="description" content="Personal academic website of Boyi Zhang, PhD candidate in Sport Science at Deutsche Sporthochschule Köln, specialising in low energy availability, master athlete health, and exercise physiology.">
-<meta name="keywords" content="Boyi Zhang, Sport Science, Exercise Physiology, Low Energy Availability, RED-S, Master Athletes, DSHS Cologne, Shanghai Jiao Tong University">
 <meta name="google-site-verification" content="OuaHBXNCAcBdxynFAIiPC3vYrtRuOzu7-ejrKeQMRUg">
 <link rel="icon" href="/img/globe.svg" type="image/svg+xml">
 <link rel="alternate icon" href="/img/globe.svg">
@@ -13,98 +12,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/site.css">
-<style>
-  /* ---- hero ---- */
-  .hero{display:grid; grid-template-columns:1fr 300px; gap:56px; align-items:center;
-        padding:clamp(3rem,7vw,5.5rem) 0 clamp(2.5rem,5vw,4rem)}
-  .hero h1{font-size:clamp(2.4rem,5vw,3.3rem); line-height:1.05; letter-spacing:-.02em; margin:.2rem 0 .5rem}
-  .hero .role{font-size:1.06rem; color:var(--ink); font-weight:500; margin:0 0 .3rem}
-  .hero .role em{color:var(--muted); font-style:normal; font-weight:400}
-  .hero .edu-line{font-family:var(--mono); font-size:.76rem; color:var(--muted); margin:0 0 1.2rem}
-  .hero p.bio{color:var(--muted); font-size:1.02rem; margin:0 0 1.7rem; max-width:34rem}
-  .actions{display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.9rem}
-  .metrics{display:flex; gap:0; border:1px solid var(--line); border-radius:var(--radius-sm);
-           overflow:hidden; max-width:30rem}
-  .metric{flex:1; padding:.85rem 1rem; text-align:left; border-right:1px solid var(--line);
-          text-decoration:none; color:inherit; transition:background .15s}
-  .metric:last-child{border-right:0}
-  a.metric:hover{background:var(--surface)}
-  .metric b{display:block; font-size:1.35rem; font-weight:600; letter-spacing:-.01em}
-  .metric span{font-family:var(--mono); font-size:.66rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted)}
-  .portrait{position:relative}
-  .portrait img{width:100%; aspect-ratio:1/1.12; object-fit:cover; border-radius:var(--radius); box-shadow:var(--shadow)}
-  .portrait .ph{width:100%; aspect-ratio:1/1.12; border-radius:var(--radius); box-shadow:var(--shadow);
-       background:linear-gradient(150deg,var(--accent),var(--accent-ink)); display:flex; align-items:flex-end;
-       padding:1rem; color:#fff; font-family:var(--mono); font-size:.75rem}
-  @media(max-width:720px){ .hero{grid-template-columns:1fr; gap:32px} .portrait{max-width:220px} }
 
-  /* research cards */
-  .themes{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
-  .theme{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
-         padding:1.4rem 1.3rem; transition:.18s}
-  .theme:hover{box-shadow:var(--shadow); transform:translateY(-2px)}
-  .theme .dot{width:26px; height:4px; border-radius:2px; background:var(--accent); margin-bottom:1rem}
-  .theme h3{font-size:1.02rem; margin:0 0 .5rem; letter-spacing:-.01em}
-  .theme p{font-size:.9rem; color:var(--muted); margin:0}
-  @media(max-width:720px){ .themes{grid-template-columns:1fr} }
-
-  /* publications */
-  .pubs{display:flex; flex-direction:column; gap:0}
-  .pub{display:grid; grid-template-columns:132px 1fr; gap:20px; padding:20px 0; border-bottom:1px solid var(--line)}
-  .pub:last-child{border-bottom:0}
-  .pub .thumb, .pub .thumb img{width:132px; height:92px; border-radius:var(--radius-sm); object-fit:cover}
-  .pub .thumb{background:linear-gradient(135deg,#1c6f61,#0a4f44); color:#fff; display:flex; align-items:flex-end;
-              padding:.5rem; font-family:var(--mono); font-size:.62rem; line-height:1.25}
-  .pub h3{font-size:1rem; line-height:1.35; margin:0 0 .3rem; letter-spacing:-.005em}
-  .pub h3 a{text-decoration:none} .pub h3 a:hover{color:var(--accent-ink)}
-  .pub .auth{font-size:.85rem; color:var(--muted); margin:0 0 .35rem}
-  .pub .auth b{color:var(--ink); font-weight:600}
-  .pub .venue{font-family:var(--mono); font-size:.76rem; color:var(--muted); margin:0 0 .5rem}
-  .pub .venue em{color:var(--ink); font-style:normal}
-  .chips{display:flex; flex-wrap:wrap; gap:.4rem}
-  .chip{font-family:var(--mono); font-size:.66rem; text-transform:uppercase; letter-spacing:.06em;
-        padding:.14rem .5rem; border-radius:5px; border:1px solid var(--line); color:var(--muted)}
-  .chip.oa{background:var(--accent-soft); border-color:transparent; color:var(--accent-ink)}
-  .chip.first{background:#14181a; border-color:transparent; color:#fff}
-  @media(max-width:560px){ .pub{grid-template-columns:1fr} .pub .thumb,.pub .thumb img{width:100%; height:150px} }
-
-  /* news */
-  .news{display:flex; flex-direction:column}
-  .news-row{display:grid; grid-template-columns:96px 1fr; gap:18px; padding:14px 0; border-bottom:1px solid var(--line)}
-  .news-row:last-child{border-bottom:0}
-  .news-row time{font-family:var(--mono); font-size:.76rem; color:var(--accent-ink); padding-top:.1rem}
-  .news-row p{margin:0; font-size:.95rem}
-
-  /* contact / footer */
-  .contact{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
-  .contact .card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:1.2rem 1.3rem}
-  .contact .card h4{font-family:var(--mono); font-size:.68rem; text-transform:uppercase; letter-spacing:.1em;
-                    color:var(--muted); margin:0 0 .5rem}
-  .contact .card a{color:var(--accent-ink); text-decoration:none; font-size:.92rem}
-  .contact .card p{margin:0; font-size:.92rem; color:var(--muted)}
-  @media(max-width:720px){ .contact{grid-template-columns:1fr} }
-</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Boyi Zhang","url":"https://boyee-zby.github.io","sameAs":["https://orcid.org/0000-0001-8418-2275","https://scholar.google.com/citations?user=kvJrtD0AAAAJ&hl=en","https://www.researchgate.net/profile/Boyi-Zhang-6/research","https://fis.dshs-koeln.de/en/persons/boyi-zhang/","https://github.com/boyee-zby"]}</script>
 </head>
 <body>
 
 <div class="nav">
   <div class="wrap nav-inner">
-    <div class="brand">Boyi Zhang <span>Sport Scientist</span></div>
+    <a class="brand" href="/">Boyi Zhang <span>Sport Scientist</span></a>
     <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
+      <a href="/#about">About</a>
+      <a href="/#research">Research</a>
+      <a href="/publications/">Publications</a>
       <a href="/activities/">Activities</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
+      <a href="/#news">News</a>
+      <a href="/#contact">Contact</a>
     </nav>
   </div>
 </div>
 
 <main class="wrap">
 
-  <!-- HERO -->
   <section class="hero" id="about">
     <div>
       <p class="eyebrow">Sport Scientist · DSHS Cologne</p>
@@ -137,7 +65,6 @@
     </div>
   </section>
 
-  <!-- RESEARCH -->
   <section class="section" id="research">
     <p class="eyebrow">Research</p>
     <h2>Three lines of work</h2>
@@ -160,20 +87,19 @@
     </div>
   </section>
 
-  <!-- PUBLICATIONS -->
   <section class="section" id="publications">
     <div class="section-head">
       <div><p class="eyebrow">Selected work</p><h2 style="margin-top:0">Selected publications</h2></div>
       <a class="link-more" href="/publications/">View all 18 →</a>
     </div>
     <div class="pubs">
-
+      
       <article class="pub">
         <div class="thumb"><img src="/img/papers/2026-bmc-exercise.jpg" alt=""
-             onerror="this.parentElement.textContent='BMC · 2026'"></div>
+             onerror="this.parentElement.textContent='BMC Sports Science, Medicine and Rehabilitation · 2026'"></div>
         <div>
-          <h3><a href="https://doi.org/10.1186/s13102-026-00045-z" target="_blank">Effectiveness of a combined exercise intervention on sedentary behaviour, body composition, and cardiometabolic health in middle-aged adults</a></h3>
-          <p class="auth"><b>Zhang B</b>, Yang Z, Yin M, Xie Y, Zuo H, Cheng S, et al.</p>
+          <h3><a href="https://doi.org/10.1186/s13102-026-00045-z" target="_blank">Effectiveness of combined exercise intervention on sedentary behaviour patterns, body composition, and cardiometabolic health among middle-aged adults</a></h3>
+          <p class="auth"><b>Zhang B</b>, Yang Z, Yin M, Xie Y, Zuo H, Zhang T, et al.</p>
           <p class="venue"><em>BMC Sports Science, Medicine and Rehabilitation</em> · 2026</p>
           <div class="chips"><span class="chip first">First author</span><span class="chip oa">Open Access</span><span class="chip">DOI</span></div>
         </div>
@@ -181,21 +107,21 @@
 
       <article class="pub">
         <div class="thumb"><img src="/img/papers/2025-sjmss-postcovid.jpg" alt=""
-             onerror="this.parentElement.textContent='SJMSS · 2025'"></div>
+             onerror="this.parentElement.textContent='Scandinavian Journal of Medicine & Science in Sports · 2025'"></div>
         <div>
-          <h3><a href="https://doi.org/10.1111/sms.70106" target="_blank">Post-COVID-19 condition in track and field master athletes: severity, symptoms, and associations with quality of life and CRP</a></h3>
-          <p class="auth"><b>Zhang B</b>, Grau M, Puta C, Arvidsson D, Böcker J, et al.</p>
-          <p class="venue"><em>Scandinavian Journal of Medicine &amp; Science in Sports</em> · 2025</p>
+          <h3><a href="https://doi.org/10.1111/sms.70106" target="_blank">Post-COVID-19 condition in track and field master athletes: severity, symptoms, and associations with quality of life and C-reactive protein levels</a></h3>
+          <p class="auth"><b>Zhang B</b>, Grau M, Puta C, Arvidsson D, Arz M, Böcker J, et al.</p>
+          <p class="venue"><em>Scandinavian Journal of Medicine & Science in Sports</em> · 2025</p>
           <div class="chips"><span class="chip first">First author</span><span class="chip">DOI</span></div>
         </div>
       </article>
 
       <article class="pub">
         <div class="thumb"><img src="/img/papers/2025-djsm-menopause.jpg" alt=""
-             onerror="this.parentElement.textContent='DJSM · 2025'"></div>
+             onerror="this.parentElement.textContent='German Journal of Sports Medicine (DJSM) · 2025'"></div>
         <div>
-          <h3><a href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ" target="_blank">Menopausal symptoms in track and field master athletes: insights from the 2024 World Masters Athletics Championship</a></h3>
-          <p class="auth"><b>Zhang B</b>, Pesta D, Forbes S, Chilibeck P, McLaurin N, Tanaka H, Böcker J, et al.</p>
+          <h3><a href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ&hl=en" target="_blank">Menopausal symptoms in track and field master athletes: insights from the 2024 World Masters Athletics Championship</a></h3>
+          <p class="auth"><b>Zhang B</b>, Pesta D, Forbes S, Chilibeck P, McLaurin N, Tanaka H, et al.</p>
           <p class="venue"><em>German Journal of Sports Medicine (DJSM)</em> · 2025</p>
           <div class="chips"><span class="chip first">First author</span></div>
         </div>
@@ -203,9 +129,9 @@
 
       <article class="pub">
         <div class="thumb"><img src="/img/papers/2025-djsm-lea.jpg" alt=""
-             onerror="this.parentElement.textContent='DJSM · 2025'"></div>
+             onerror="this.parentElement.textContent='German Journal of Sports Medicine (DJSM) · 2025'"></div>
         <div>
-          <h3><a href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ" target="_blank">Prevalence of low energy availability and fracture history in athletes at the World Masters Athletics Championships</a></h3>
+          <h3><a href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ&hl=en" target="_blank">Prevalence of low energy availability and fracture history in athletes at the World Masters Athletics Championships</a></h3>
           <p class="auth"><b>Zhang B</b>, Forbes S, Pesta D, Chilibeck P, Ventovuori V, McLaurin N, et al.</p>
           <p class="venue"><em>German Journal of Sports Medicine (DJSM)</em> · 2025</p>
           <div class="chips"><span class="chip first">First author</span></div>
@@ -214,10 +140,10 @@
 
       <article class="pub">
         <div class="thumb"><img src="/img/papers/2022-frontpsych-covid.jpg" alt=""
-             onerror="this.parentElement.textContent='Front. Psychol. · 2022'"></div>
+             onerror="this.parentElement.textContent='Frontiers in Psychology · 2022'"></div>
         <div>
           <h3><a href="https://doi.org/10.3389/fpsyg.2022.1022966" target="_blank">Changes in health behaviors and conditions during COVID-19 pandemic strict campus lockdown among Chinese university students</a></h3>
-          <p class="auth"><b>Zhang B</b>, Lei SM, Le S, Gong Q, Cheng S, Wang X.</p>
+          <p class="auth"><b>Zhang B</b>, Lei SM, Le S, Gong Q, Cheng S, Wang X</p>
           <p class="venue"><em>Frontiers in Psychology</em> · 2022</p>
           <div class="chips"><span class="chip first">First author</span><span class="chip">Cited by 28</span><span class="chip">DOI</span></div>
         </div>
@@ -225,10 +151,10 @@
 
       <article class="pub">
         <div class="thumb"><img src="/img/papers/2022-smhs-sleep.jpg" alt=""
-             onerror="this.parentElement.textContent='SMHS · 2022'"></div>
+             onerror="this.parentElement.textContent='Sports Medicine and Health Science · 2022'"></div>
         <div>
           <h3><a href="https://doi.org/10.1016/j.smhs.2022.01.003" target="_blank">Assessment of sleep disturbances with the athlete sleep screening questionnaire in Chinese athletes</a></h3>
-          <p class="auth"><b>Zhang B</b>, Bender A, Tan X, Wang X, Le S, Cheng S.</p>
+          <p class="auth"><b>Zhang B</b>, Bender A, Tan X, Wang X, Le S, Cheng S</p>
           <p class="venue"><em>Sports Medicine and Health Science</em> · 2022</p>
           <div class="chips"><span class="chip first">First author</span><span class="chip">Cited by 24</span><span class="chip">DOI</span></div>
         </div>
@@ -236,19 +162,17 @@
 
       <article class="pub">
         <div class="thumb"><img src="/img/papers/2021-ssr-fifa.jpg" alt=""
-             onerror="this.parentElement.textContent='SSR · 2021'"></div>
+             onerror="this.parentElement.textContent='Sport Science Research · 2021'"></div>
         <div>
-          <h3><a href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ" target="_blank">Acute effects of FIFA11+ warm-up on agility and leg power of 2nd league female soccer players</a></h3>
-          <p class="auth"><b>Zhang B</b>, Ye Z, Bai C, Chen M, Yu Z, Li Y.</p>
+          <h3><a href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ&hl=en" target="_blank">Acute effects of FIFA11+ warm-up on agility and leg power of 2nd league female soccer players</a></h3>
+          <p class="auth"><b>Zhang B</b>, Ye Z, Bai C, Chen M, Yu Z, Li Y</p>
           <p class="venue"><em>Sport Science Research</em> · 2021</p>
           <div class="chips"><span class="chip first">First author</span></div>
         </div>
       </article>
-
     </div>
   </section>
 
-  <!-- NEWS -->
   <section class="section" id="news">
     <p class="eyebrow">Recent</p>
     <h2>News</h2>
@@ -259,7 +183,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section class="section" id="contact">
     <p class="eyebrow">Get in touch</p>
     <h2>Contact</h2>
@@ -269,7 +192,6 @@
       <div class="card"><h4>Elsewhere</h4><a href="https://scholar.google.com/citations?user=kvJrtD0AAAAJ&hl=en" target="_blank">Google Scholar</a> · <a href="https://orcid.org/0000-0001-8418-2275" target="_blank">ORCID</a> · <a href="https://www.researchgate.net/profile/Boyi-Zhang-6/research" target="_blank">ResearchGate</a> · <a href="https://fis.dshs-koeln.de/en/persons/boyi-zhang/" target="_blank">DSHS Profile</a> · <a href="https://space.bilibili.com/214523135" target="_blank">Bilibili</a></div>
     </div>
   </section>
-
 </main>
 
 <footer class="wrap">© 2026 Boyi Zhang · boyee-zby.github.io · <a href="/blog/">Blog</a></footer>

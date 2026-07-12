@@ -30,28 +30,32 @@ a{color:inherit}
   position:sticky; top:0; z-index:20;
   background:rgba(255,255,255,.82); backdrop-filter:saturate(180%) blur(12px);
   border-bottom:1px solid var(--line);
+  transition:background .2s ease;
 }
 .nav-inner{position:relative; display:flex; align-items:center; justify-content:space-between; height:62px}
-.brand{font-weight:600; letter-spacing:-.01em; text-decoration:none; color:var(--ink)}
-.brand span{color:var(--muted); font-weight:400; font-size:.86rem; margin-left:.5rem}
+.brand{font-weight:600; letter-spacing:-.01em; text-decoration:none; color:var(--ink); transition:color .2s ease}
+.brand span{color:var(--muted); font-weight:400; font-size:.86rem; margin-left:.5rem; transition:color .2s ease}
 .nav-links{display:flex; gap:1.7rem; font-size:.92rem}
 .nav-links a{color:var(--muted); text-decoration:none; transition:color .15s}
 .nav-links a:hover{color:var(--ink)}
 .nav-links a.active{color:var(--accent-ink); font-weight:600}
 
 /* Mobile collapse toggle — a real button + tiny inline script (see
-   pageShell() in scripts/generate-site.js), full-screen teal overlay,
-   matching the theme's Bootstrap navbar-toggler collapse behavior on
-   /blog/ and other theme-rendered pages. */
+   pageShell() in scripts/generate-site.js). When open, the nav bar itself
+   turns teal (brand text goes white) and the menu panel is the same solid
+   teal directly beneath it, so it reads as one continuous full-screen
+   panel — matching the theme's Bootstrap navbar-toggler collapse on
+   /blog/ and other theme-rendered pages, not a separate white bar sitting
+   above a teal box. */
 .nav-toggle-btn{
   display:none; position:relative; flex-direction:column; justify-content:center; gap:5px;
   width:26px; height:22px; cursor:pointer; background:none; border:0; padding:0; margin:0;
   -webkit-appearance:none; appearance:none; border-radius:0; box-shadow:none;
-  flex-shrink:0;
+  flex-shrink:0; z-index:26;
 }
 .nav-toggle-btn span{
   display:block; height:2px; width:100%; background:var(--ink); border-radius:1px;
-  transition:transform .2s ease, opacity .2s ease;
+  transition:transform .2s ease, opacity .2s ease, background .2s ease;
 }
 .nav-toggle-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav-toggle-btn.open span:nth-child(2){opacity:0}
@@ -59,8 +63,13 @@ a{color:inherit}
 
 @media(max-width:720px){
   .nav-toggle-btn{display:flex}
+  .nav.open{background:var(--accent); backdrop-filter:none; border-bottom-color:transparent}
+  .nav.open .brand{color:#fff}
+  .nav.open .brand span{color:rgba(255,255,255,.75)}
+  .nav.open .nav-toggle-btn span{background:#fff}
+
   .nav-links{
-    display:none; flex-direction:column; align-items:center; gap:0;
+    display:none; flex-direction:column; align-items:center; justify-content:center; gap:0;
     position:fixed; z-index:25; top:62px; left:0; right:0; bottom:0;
     height:calc(100vh - 62px); height:calc(100dvh - 62px);
     background:var(--accent); padding:1.5rem 24px; overflow-y:auto;
@@ -68,11 +77,10 @@ a{color:inherit}
   }
   .nav-links.open{display:flex}
   .nav-links a{
-    color:rgba(255,255,255,.92); width:100%; max-width:22rem; text-align:center;
-    padding:1rem 0; border-bottom:1px solid rgba(255,255,255,.15); font-size:1rem;
+    color:#fff; width:100%; max-width:22rem; text-align:center;
+    padding:.9rem 0; font-size:1.15rem; font-weight:500;
   }
-  .nav-links a:last-child{border-bottom:0}
-  .nav-links a:hover, .nav-links a.active{color:#fff; background:rgba(255,255,255,.08)}
+  .nav-links a:hover, .nav-links a.active{color:rgba(255,255,255,.75)}
 }
 
 /* ---- sections ---- */

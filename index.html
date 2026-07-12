@@ -201,17 +201,20 @@
 
 <script>
 (function () {
+  var nav = document.querySelector('.nav');
   var btn = document.getElementById('nav-toggle-btn');
   var links = document.getElementById('nav-links');
   btn.addEventListener('click', function () {
     var open = links.classList.toggle('open');
     btn.classList.toggle('open', open);
+    nav.classList.toggle('open', open);
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
   links.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', function () {
       links.classList.remove('open');
       btn.classList.remove('open');
+      nav.classList.remove('open');
       btn.setAttribute('aria-expanded', 'false');
     });
   });

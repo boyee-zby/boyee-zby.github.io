@@ -9,7 +9,8 @@
 .hero .role{font-size:1.06rem; color:var(--ink); font-weight:500; margin:0 0 .3rem}
 .hero .role em{color:var(--muted); font-style:normal; font-weight:400}
 .hero .edu-line{font-family:var(--mono); font-size:.76rem; color:var(--muted); margin:0 0 1.2rem}
-.hero p.bio{color:var(--muted); font-size:1.02rem; margin:0 0 1.7rem; max-width:34rem}
+.hero .bio{color:var(--muted); font-size:1.02rem; margin:0 0 1.7rem; max-width:34rem}
+.hero .bio p{margin:0}
 .actions{display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.9rem}
 .metrics{display:flex; gap:0; border:1px solid var(--line); border-radius:var(--radius-sm);
          overflow:hidden; max-width:30rem}

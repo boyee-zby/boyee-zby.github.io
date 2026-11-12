@@ -1,25 +1,6 @@
 /* Activities page (talks & posters) */
 
-.quick-access {
-  display: flex;
-  gap: 0.5rem;
-  margin: 0 0 1.5rem;
-}
-.chip {
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 0.3rem 0.9rem;
-  border-radius: 999px;
-  background: #e2efeb;
-  color: #0a4f44;
-  text-decoration: none;
-}
-.chip:hover { background: #0c5f52; color: #fff; }
-
-.section h2 {
-  border-left: 4px solid #0c5f52;
-  padding-left: 0.6rem;
-}
+/* .quick-access chips are shared (site.css) */
 
 .talk-list { display: flex; flex-direction: column; }
 .talk-card {
@@ -41,6 +22,5 @@
 .talk-link { color: #0c5f52; font-weight: 600; }
 
 @media (max-width: 560px) {
-  .quick-access { flex-wrap: wrap; }
   .talk-card h3 { font-size: 0.95rem; }
 }

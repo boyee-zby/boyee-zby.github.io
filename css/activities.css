@@ -13,7 +13,7 @@
 .talk-card h3 a:hover { color: #0a4f44; }
 
 .talk-meta {
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-family: var(--mono);
   font-size: 0.8rem;
   color: #5c666b;
   margin: 0;

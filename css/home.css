@@ -38,6 +38,18 @@
 .timeline .edu:last-child > div::after{display:none}
 .timeline .edu:first-child > div::before{background:var(--accent)}
 
-@media(max-width:620px){ .news-row, .edu{grid-template-columns:72px 1fr; gap:12px} }
+@media(max-width:620px){
+  .intro{padding:1.8rem 0 1.6rem}
+  .intro .bio{font-size:1rem}
+  /* updates: date above the text */
+  .news-row{display:block; padding:12px 0}
+  .news-row time{display:block; padding:0; margin-bottom:.15rem; font-size:.8rem; font-weight:500}
+  /* education: date sits inside the timeline, above the degree */
+  .timeline .edu{display:block; position:relative; padding:0 0 18px 22px}
+  .timeline .edu time{display:block; padding:0; margin-bottom:.1rem; font-size:.8rem; font-weight:500}
+  .timeline .edu > div{position:static; padding-left:0}
+  .timeline .edu > div::before{left:0; top:.35rem}
+  .timeline .edu > div::after{left:5px; top:1.15rem; bottom:0}
+}
 .news-row p a{color:var(--accent-ink); text-decoration-color:rgba(12,95,82,.35); text-underline-offset:3px}
 .news-row p a:hover{text-decoration-color:var(--accent)}

@@ -53,7 +53,16 @@
 .paper-text .auth b{color:var(--ink); font-weight:600; text-decoration:underline; text-decoration-color:var(--accent); text-underline-offset:3px}
 .paper-text .venue{font-size:.86rem; color:var(--muted); margin:0 0 .65rem}
 .paper-text .venue em{color:var(--ink)}
-@media(max-width:620px){ .paper{grid-template-columns:1fr; gap:14px} .paper-img{max-width:360px} }
+@media(max-width:620px){
+  .paper{grid-template-columns:1fr; gap:12px; padding:18px 0}
+  .paper-img{max-width:none}
+  .themes{gap:12px}
+  .theme{display:block; padding:1rem 1.05rem 1.1rem}
+  .theme:hover{transform:none}
+  .theme-n{margin:0 0 .35rem}
+  .cite-list{padding-left:1.5rem}
+  .section h3.sub{margin-top:1.4rem}
+}
 
 
 /* ---- conference proceedings ---- */

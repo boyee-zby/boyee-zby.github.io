@@ -53,3 +53,6 @@
 }
 .news-row p a{color:var(--accent-ink); text-decoration-color:rgba(12,95,82,.35); text-underline-offset:3px}
 .news-row p a:hover{text-decoration-color:var(--accent)}
+/* links inside Education (institute, supervisor) */
+.edu a{color:inherit; text-decoration:underline; text-decoration-color:rgba(12,95,82,.35); text-underline-offset:3px}
+.edu a:hover{color:var(--accent-ink); text-decoration-color:var(--accent)}

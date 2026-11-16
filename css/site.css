@@ -177,6 +177,9 @@ a{color:inherit}
 .dated .dl-note{font-style:italic}
 .dated .dl-body{font-size:.86rem; color:var(--muted); margin-top:.3rem; line-height:1.55}
 .dated .dl-body p{margin:0}
+.dated .dl-body ul{margin:.15rem 0 0; padding-left:1.1rem}
+.dated .dl-body li{margin:.1rem 0}
+.dated .dl-body li::marker{color:var(--accent)}
 @media(max-width:620px){ .dated > li{grid-template-columns:80px 1fr; gap:12px} }
 
 /* ---- prose (Misc page) ---- */
